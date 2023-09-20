@@ -1,0 +1,407 @@
+\input{preamble_twocol.tex}
+\input{definitions_ask.tex}
+
+
+
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{20pt}
+\def\columnseprulecolor{\color{Col1}}
+
+
+
+\begin{document}
+\pagestyle{vangelis}
+
+\begin{center}
+  \large\bfseries\textcolor{Col2}{Πραγματικοί Αριθμοί} \\
+  \large\bfseries\textcolor{Col2}{(Λύσεις των Ασκήσεων)}
+\end{center}
+
+\vspace{\baselineskip}
+
+\begin{multicols}{2}
+
+  \begin{enumerate}
+    \setcounter{enumi}{1}
+  \item \textcolor{Col1}{Για τα παρακάτω σύνολα, να υπολογιστούν και να αποδειχθούν τα 
+    supremum και infimum.}
+\begin{enumerate}
+      \item {\boldmath\textcolor{Col2}{$A = (0,2) $}}
+        \begin{proof}(Με Ορισμό)
+          Έχουμε ότι $ \sup A = 2 $ και $ \inf A = 0 $.
+          \begin{myitemize}
+            \item Θα δείξουμε ότι $ \sup A = 2 $. Πράγματι:
+              $2$ α.φ. του $A$, γιατί $ a < 2, \; \forall a \in A $.
+              Έστω $M$ α.φ. του $A$, δηλ. $a \leq M, \; \forall a \in A $.
+              Θ.δ.ο. $ 2 \leq M $ (Με άτοπο). Πράγματι:
+              Έστω $ M < 2 $. Τότε $ (M,2) \neq \emptyset \Rightarrow (M,2) \cap A \neq
+              \emptyset $, άρα 
+              $ \exists a \in (M,2) $.
+              Δηλαδή $ \exists a \in A $ με $ a > M $. 
+              άτοπο, γιατί $ M $ α.φ. του $A$.
+            \item Θα δείξουμε ότι $ \inf A = 0 $. Πράγματι:
+              $0$ κ.φ. του $A$, γιατί $ a > 0, \; \forall a \in A $.
+              Έστω $m$ κ.φ. του $A$, δηλ. $a \geq m, \; \forall a \in A $.
+              Θ.δ.ο. $ 0 \geq m $ (Με άτοπο). Πράγματι:
+              Έστω $ m > 0 $. Τότε $ (0,m) \neq \emptyset \Rightarrow (0,m) \cap A \neq
+              \emptyset $, άρα 
+              $ \exists a \in (0,m) $. 
+              Δηλαδή $ \exists a \in A $ με $ a < m $, 
+              άτοπο, γιατί $ m $ κ.φ. του $A$.
+          \end{myitemize}
+        \end{proof}
+      \item {\boldmath\textcolor{Col2}{$ A = \{ x \in \mathbb{R} \; 
+        : \; x < 0 \} $}}. 
+        \begin{proof}(Με Ορισμό)
+          Έχουμε ότι $ \sup A = 0 $ και $ \inf A = - \infty $.
+          \begin{myitemize}
+            \item Θα δείξουμε ότι $ \sup A = 0 $. Πράγματι:
+              $ 0 $ α.φ. του $A$, γιατί $ a < 0, \; \forall a \in A $.
+              Έστω $M$ α.φ. του $A$, δηλ. $a \leq M, \; \forall a \in A $.
+              Θ.δ.ο. $ 0 \leq M $ (Με άτοπο). Πράγματι:
+              Έστω $ M < 0 $. Τότε $ (M,0) \neq \emptyset $, άρα 
+              $ \exists a \in (M,0) $.
+              Δηλαδή $ \exists a \in A $ με $ a > M $, 
+              άτοπο, γιατί $ M $ α.φ. του $A$.
+            \item Θα δείξουμε ότι $ \inf A = -\infty $. Πράγματι:
+              $ A \neq \emptyset $ και $A$ όχι κάτω φραγμένο. Άρα γράφουμε
+              $ \inf A = - \infty $.
+          \end{myitemize}
+        \end{proof}
+\end{enumerate} 
+
+    \item \textcolor{Col1}{Έστω $A$ φραγμένο υποσύνολο του $ \mathbb{R} $ τέτοιω ώστε 
+      $ \sup A = \inf A $.  Να δείξετε ότι το $A$ είναι μονοσύνολο.}
+      \begin{proof}
+        Έστω $ c = \inf A = \sup A $. Τότε $ \forall a \in A $ ισχύει $ c \leq a \leq c
+        $. Άρα $ A = \{ c \} $.
+      \end{proof}
+
+    \item \textcolor{Col1}{Έστω $ A, B $ μη-κενά υποσύνολα του $ \mathbb{R} $ 
+        τέτοια ώστε $ a \leq b, \; \forall a \in A $ και $ \forall b \in B $.
+        Να δείξετε ότι:
+        \begin{enumerate}
+          \item $ \sup A \leq b, \;  \forall b \in B $
+          \item $ \sup A \leq \inf B $
+      \end{enumerate}}
+      \begin{proof}
+      \item {}
+        \begin{enumerate}
+          \item \label{prop:one} Έστω $ b \in B \Rightarrow a \leq b, \; 
+            \forall a \in A $. 
+            Άρα $ b \in B $ α.φ. του $A, \; \forall b \in B$. Άρα 
+            $ \sup A \leq b, \; \forall b \in B $.
+          \item Από το \ref{prop:one} έχουμε ότι $ \sup A \leq b, \; \forall 
+            b \in B$. Άρα το $ \sup A $ κ.φ. του $B$. Άρα $ \sup A \leq 
+            \inf B$.
+        \end{enumerate}
+      \end{proof}
+
+    \item \textcolor{Col1}{ Έστω $ A \subseteq \mathbb{R} $ μη-κενό, και κάτω 
+        φραγμένο και έστω $ B $ το σύνολο των κάτω φραγμάτων του $A$. Να δείξετε ότι:
+        \begin{enumerate}
+          \item $ B \neq \emptyset $
+          \item $B$ άνω φραγμένο.
+          \item $ \sup B = \inf A $
+      \end{enumerate}}
+      \begin{proof}
+      \item {}
+        \begin{enumerate}
+          \item $A$ κάτω φραγμένο. Άρα $ \exists x \in \mathbb{R} $ τ.ω. $x$ 
+            κ.φ. του $A$, οπότε $ x \in B \Rightarrow B \neq \emptyset $.
+          \item $ A \neq \emptyset $, άρα $ \exists x \in A $. Τότε $ \forall 
+            y \in \mathbb{R}$ με $ y>x $ έχουμε ότι $ y $ όχι κ.φ. του A. 
+            Άρα $ y \not\in b $. Άρα το $ B $ είναι άνω φραγμένο.
+          \item 
+            $  
+            \left.
+              \begin{tabular}{l}
+                $ B \neq \emptyset $ \\
+                $B$ άνω φραγμένο
+              \end{tabular}
+            \right\}
+            \overset{\text{Α.Π.}}{\Rightarrow} B $ έχει supremum, έστω $ a = \sup B $.
+            Τότε $ a \geq x, \; \forall x \in B $, άρα $ a \geq x, \; \forall x $
+            όπου $x$ είναι κ.φ. του $A$, άρα $ a \geq \inf A $. Οπότε αρκεί να 
+            δείξουμε ότι $ \inf A \geq a $, δηλ. αρκεί να δείξουμε ότι $ 
+            a$ κ.φ. του $A$ (Με άτοπο). Πράγματι:
+
+            Έστω ότι $ a $ όχι κ.φ. του $A$. Άρα $ \exists x \in A, \; x < a $. 
+            Όμως $ a = \sup B $, οπότε από τη χαρ. ιδιοτ. του supremum έχουμε ότι
+            $ \exists y \in B, \; x < y < a $. Άτοπο, γιατί $ y $ κ.φ. του $A$.
+
+            Άρα $ \sup B = \inf A $.
+        \end{enumerate}
+      \end{proof}
+
+    \item \textcolor{Col1}{Να αποδείξετε ότι το σύνολο $ \mathbb{Z} $ δεν 
+      είναι φραγμένο.}
+      \begin{proof}(Με άτοπο)
+        Έστω ότι το σύνολο $ \mathbb{Z} $ είναι άνω φραγμένο. Είναι και μη κενό, άρα 
+        από το αξίωμα πληρότητας υπάρχει το $ \sup \mathbb{Z} = s \in \mathbb{R} $. 
+        Τότε το $ s \in \mathbb{Z} $ ή $ s \not\in \mathbb{Z} $. 
+        \begin{myitemize}
+          \item Αν $ s \in \mathbb{Z} $ τότε $ s+1 \in \mathbb{Z} $, άτοπο (γιατί $s$ 
+            α.φ.\ του $ \mathbb{Z} $)
+          \item Αν $ s \not\in \mathbb{Z} $, τότε από τη χαρακτηριστική ιδιότητα 
+            του $ \sup $, έχουμε ότι για $ \varepsilon =1>0, \quad \exists z \in
+            \mathbb{Z} \; : \; s-1<z \Rightarrow s < z+1 $, άτοπο, γιατί $ s $ α.φ.\ 
+            του $ \mathbb{Z} $.
+            Ομοίως αποδεικνύουμε ότι $ \mathbb{Z} $ δεν είναι κάτω φραγμένο.
+        \end{myitemize}
+      \end{proof}
+
+    \item \textcolor{Col1}{\label{ask:3z} Να αποδείξετε ότι το σύνολο 
+      $ A = \{ 3k \; : \; k \in \mathbb{Z} \} $ δεν είναι άνω φραγμένο.}
+      \begin{proof}
+        Πράγματι, έστω $ A $ άνω φραγμένο, και επειδή $A \neq \emptyset $ 
+        υπάρχει το supremum του $A$, έστω $ \sup A = s $. Τότε $ s-1 < s $.
+        Άρα από τη χαρ. ιδιοτ. του supremum, $ \exists k \in \mathbb{Z}, \; 
+        3k > s-1$. Άρα $ 3k+3 > s-1 + 3 \Leftrightarrow 3(k+1) > s+2 > s $. Όμως 
+        $ 3(k+1) \in \mathbb{Z} $, άτοπο, γιατί $ s = \sup A $.
+      \end{proof}
+
+    \item \textcolor{Col1}{Να αποδείξετε με χρήση της Μαθηματικής Επαγωγής 
+        τους παρακάτω τύπους.  
+        \begin{enumerate}
+          \item $ 1^{2} + 2^{2} + \cdots + n^{2} = \frac{n(n+1)(2n+1)}{6}, \; 
+            \forall n \in \mathbb{N} $
+          \item $ 1^{3} + 2^{3} + \cdots + n^{3} = (1+2+\cdots + n)^{2}, \; 
+            \forall n \in \mathbb{N} $
+      \end{enumerate}}
+      \begin{proof}
+      \item {}
+        \begin{enumerate}
+          \item Για $ n=1 $, έχω: $ 1^{2} = \frac{1\cdot 2 \cdot 3}{6} = 1 $, 
+            ισχύει.
+
+            Έστω ότι ισχύει για $n=k$, δηλ, 
+            $ \inlineequation[eq:epag1]{1^{2} + \cdots + k^{2} = 
+            \frac{k (k+1)(2k+1)}{6}} $
+
+            θ.δ.ο ισχύει και για $ n=k+1 $. Πράγματι:
+            \begin{align*}
+              1^{2} + \cdots + k^{2} + (k+1)^{2} 
+                        &\overset{\eqref{eq:epag1}}{=}\frac{k(k+1)(2k+1)}{6} 
+                        + (k+1)^{2} \\
+                        &= \frac{k(k+1)(2k+1)+6(k+1)^{2}}{6} \\
+                        &= \frac{(k+1)[k(2k+1)+6(k+1)]}{6} \\
+                        &= \frac{(k+1)(2k^{2}+7k+6)}{6} \\
+                        &= \frac{(k+1)2(k+2)(k+ \frac{3}{2})}{6} \\
+                        &= \frac{(k+1)(k+2)(2k+3)}{6} \\
+                        &= \frac{(k+1)[((k+1)+1)[2(k+1)+1]]}{6} 
+            \end{align*}
+          \item Για $ n=1 $, έχω: $ 1^{3} = 1^{2} $, ισχύει.
+
+            Έστω ότι ισχύει για $ n=k $, δηλ. \inlineequation[eq:epag2]{1^{3} 
+            + \cdots + k^{3} = (1+\cdots + k)^{2}}
+
+            Θ.δ.ο. ισχύει και για $ n=k+1 $. Πράγματι:
+            \begin{align*}
+              [1+ \cdots &+ k + (k+1)]^{2} 
+              = (1+\cdots + k)^{2} \\
+                         & \hspace{0.5cm} + 2(1+\cdots + k)(k+1) + (k+1)^{2} = \\
+                         &\overset{\eqref{eq:epag2}}{=} 1^{3}+\cdots +k^{3} + 2\cdot 
+                         \frac{k(k+1)}{2}\cdot (k+1) + (k+1)^{2} \\
+                         &=1^{3}+\cdots +k^{3}+(k+1)^{2}(k+1) \\
+                         &= 1^{3}+\cdots +k^{3}+(k+1)^{3}
+            \end{align*} 
+        \end{enumerate}
+      \end{proof}
+
+    \item \label{ask:sums} \textcolor{Col1}{Βρείτε ένα κλειστό τύπο για τα 
+        παρακάτω αθροίσματα: 
+        \begin{enumerate}
+          \item $ \sum_{k=1}^{n} (2k-1) = 1 + 3 + 5 + \cdots + (2n-1)  $
+          \item $ \sum_{k=1}^{n} (2k-1)^{2} = 1^{2} + 3^{2} + 5^{2} 
+            + \cdots + (2n-1)^{2}  $ 
+      \end{enumerate}}
+      \begin{proof}
+      \item {}
+        \begin{enumerate}
+          \item \begin{align*}
+              \sum_{k=1}^{n} (2k-1) &= 1 + 3 + \cdots + (2n-1) \\
+                                    &=1 + 2 + 3 +\cdots +2n - 2(1+\cdots +n) \\
+                                    &= \frac{2n(2n+1)}{2}-2 \cdot \frac{n(n+1)}{2} \\
+                                    &=2n^{2}+\cancel{n}-n^{2}-\cancel{n} =n^{2}
+            \end{align*}
+          \item \begin{align*}
+              \sum_{k=1}^{n}
+              & (2k-1)^{2} =1^{2}+3^{2}\cdots + (2n-1)^{2} = \\
+              &=1^{2}+2^{2}+3^{2}+\cdots +(2n)^{2}-[2^{2}+4^{2}+6^{2}+\cdots +
+              (2n)^{2}] \\
+              &= \frac{2n(2n+1)(4n+1)}{6} - 4[1^{2}+2^{2}+3^{2}+\cdots +n^{2}] \\
+              &= \frac{2n(2n+1)(4n+1)}{6} - 4 \cdot \frac{n(n+1)(2n+1)}{6} \\
+              &= \frac{2n(2n+1)[(4n+1)-2(n+1)]}{6} \\
+              &= \frac{n(2n+1)(2n-1)}{3} 
+            \end{align*}
+        \end{enumerate}
+      \end{proof}
+
+    \item \label{ask:thema18sum} \textcolor{Col1}{({\bfseries Θέμα: 2018}) 
+        Να αποδείξετε ότι $ \sum_{n=2}^{N-2} \frac{1}{(n+1)(n+2)} 
+      = \frac{1}{3} - \frac{1}{N} $}
+      \begin{proof}
+      \item {}
+        $ a_n = \frac{1}{(n+1)(n+2)} = \frac{A}{n+1} + \frac{B}{n+2} = 
+        \frac{A(n+2)+B(n+1)}{(n+1)(n+2)} $
+
+        Άρα $A(n+2) = B(n+1) = 1, \; \forall n \in \mathbb{N}$
+
+        Δηλ. $ (A+B)n+2A+B=1, \; \forall n \in \mathbb{N} $, οπότε πρέπει:
+
+      $  \sysdelim.\}\systeme{A+B=0,2A+B=1} \Leftrightarrow \sysdelim..
+      \systeme{A=1,B=-1} $
+
+      Οπότε $ a_{n} = \frac{1}{(n+1)(n+2)} = \frac{1}{n+1} - \frac{1}{n+2} $
+
+      Άρα 
+      \begin{align*}
+        &\sum_{n=2}^{N-2} \frac{1}{(n+1)(n+2)} 
+        = \sum_{n=2}^{N-2} \left(\frac{1}{n+1} - \frac{1}{n+2}\right) = \\
+        &= \frac{1}{2+1} - \frac{1}{2+2} + \frac{1}{3+1} - \frac{1}{3+2} +\cdots +
+        \frac{1}{N-2+1} - \frac{1}{N-2+2} \\
+        &= \frac{1}{3} - \frac{1}{N} 
+      \end{align*}
+    \end{proof}
+
+  \item \textcolor{Col1}{Να αποδείξετε ότι $ n^{5} - n $ είναι 
+    πολλαπλάσιο του 5, $ \forall n \in \mathbb{N} $.}
+    \begin{proof}
+      Για $ n=1 $, έχω: $ 1-1=0 $, είναι πολ/σιο του 5, γιατί $0=0\cdot 5$.
+
+      Έστω ότι ισχύει για $n$, δηλ. $n^{2}-n $ 
+      είναι πολ/σιο του 5 $
+      \Leftrightarrow \inlineequation[eq:epag3]{n^{2}-n=5k, 
+      \; k \in \mathbb{Z}} $.
+
+      Θ.δ.ο. ισχύει και για (n+1). Πράγματι:
+      \begin{align*}
+        (n+1)^{5}-(n+1) &= n^{5}+5n^{4}+10n^{3}+10n^{2}+5n+1-n+1 \\
+                        &=n^{5}-n+5(n^{4}+2n^{3}+2n^{2}+n) \\
+                        &\overset{\eqref{eq:epag3}}{=} 5k 
+                        + 5(n^{4}+2n^{3}+2n^{2}+n) \\ 
+                        &= 5(k + n^{4}+2n^{3}+2n^{2}+n)
+      \end{align*}
+    \end{proof}
+
+  \item \textcolor{Col1}{Να αποδείξετε ότι $ n! > 2^{n}, \forall n \geq 4 $}
+    \begin{proof}
+    \item {}
+      Για $ n=4 $, έχω: $ 4! = 1\cdot 2 \cdot 3 \cdot 4 = 24 > 16 = 2^{4} $
+
+      Έστω ότι ισχύει για $n$, δηλ $ n! >2^{n} $. 
+
+      Θ.δ.ο. ισχύει και για $ n+1 $. Πράγματι:
+      \begin{align*} (n+1)! = 1 \cdot 2 \cdots n \cdot (n+1)  
+        =n!(n+1) > 2^{n}(n+1) \geq 2^{n}\cdot 2 = 2^{(n+1)}
+      \end{align*}
+    \end{proof}
+
+  \item \textcolor{Col1}{Έστω $ a \in \mathbb{R} $ και $ n \in \mathbb{N}$.
+      Να δείξετε με τη βοήθεια της μαθηματικής επαγωγής της 
+      παρακάτω ανισότητες.
+      \begin{enumerate}
+        \item Αν $ 0<a< \frac{1}{n} $ τότε $ (1+a)^{n} < \frac{1}{1-na} $
+        \item Αν $ 0 \leq a \leq 1$  τότε $ 1-na \leq (1-a)^{n} \leq
+          \frac{1}{1+na} $
+    \end{enumerate}}
+    \begin{proof}
+    \item {}
+      \begin{enumerate}
+        \item Για $ n=1 $, έχω: $ 1+a < \frac{1}{1-a} 
+          \Leftrightarrow (1+a)(1-a) < 1 
+          \Leftrightarrow 1-a^{2} <1 \Leftrightarrow a^{2} > 0  $,
+          ισχύει για $ 0<a<1 $.
+
+          Έστω ισχύει για $ n $, δηλ. $ (1+a)^{n} < \frac{1}{1-na}
+          $, για $ 0 < a < \frac{1}{n} $.
+
+          Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι:
+          \begin{align*}
+            (1+a)^{n+1} 
+            &= (1+a)(1+a)^{n} < (1+a)\cdot \frac{1}{1-na} \\
+            &= \frac{(1+a)(1-a)}{(1-na)(1-a)}= \frac{1-a^{2}}{(1-na)(1-a)} \\ 
+            &= \frac{1-a^{2}}{1-na-a+na^{2}} = \frac{1-a^{2}}{1-a(n+1)+na^{2}} \\
+            &< \frac{1-a^{2}}{1-a(n+1)} < \frac{1}{1-a(n+1)} 
+          \end{align*}
+        \item Αποδεικνύουμε πρώτα ότι $ (1-a)^{n} \leq \frac{1}{1+na}$,
+          αν $ 0 \leq a \leq 1 $.
+
+          Για $ n=1 $, έχω: $ 1-a \leq \frac{1}{1+a} 
+          \Leftrightarrow (1-a)(1+a) \leq 1 \Leftrightarrow 
+          1-a^{2} \leq 1 \Leftrightarrow a^{2} \geq 0  $, ισχύει
+          για $ 0 \leq a \leq 1 $. 
+
+          Έστω ότι ισχύει για $n$, δηλ. $ (1-a)^{n} \leq
+          \frac{1}{1+na} $, αν $ 0 \leq a \leq 1 $.
+
+          θ.δ.ο. ισχύει για $ n+1 $. Πράγματι: 
+          \begin{align*}
+            (1-a)^{n+1} &= (1-a)^{n}(1-a) \\
+                        &\leq \frac{1}{1+na} \cdot (1-a) \\
+                        &= \frac{(1-a)(1+a)}{(1+na)(1+a)} \\
+                        &= \frac{1-a^{2}}{1+(n+1)a +na^{2}} \\
+                        &< \frac{1-a^{2}}{1 + (n+1)a} \\
+                        &< \frac{1}{1 + (n+1)a} 
+          \end{align*}
+          Αποδεικνύουμε, τώρα, ότι $ 1-na \leq (1-a)^{n} $, αν 
+          $ 0 \leq a \leq 1 $. 
+
+          Για $ n=1 $, έχω: $ 1-a \leq 1-a $, ισχύει.
+
+          Έστω ότι ισχύει για $n$, δηλ. $ 1-na \leq (1-a){n} $.
+
+          θ.δ.ο. ισχύει και για $ n+1 $. Πράγματι:
+          \begin{align*}
+            (1-a)^{n+1}&=(1-a)^{n}\cdot (1-a) \\
+                       &\geq (1-na)(1-a) \\
+                       &=1-a-na+na^{2} \\
+                       &= 1-(n+1)a + na^{2} \\
+                       &\geq 1-(n+1)a
+          \end{align*}
+      \end{enumerate}
+    \end{proof}
+
+  \item \textcolor{Col1}{Αν $a > 0$ τότε να αποδείξετε ότι $ (1+a)^{n} 
+    \geq 1 + na + \frac{n(n-1)a^{2}}{2},\; \forall n \in \mathbb{N}$}
+    \begin{proof}
+    \item {}
+      Για $ n=1 $, έχω: $ 1+a \geq 1+a $, ισχύει.
+
+      Έστω ότι ισχύει για $n$, δηλ. $ (1+a)^{n} \geq 1+na +
+      \frac{n(n-1)a^{2}}{2} $.
+
+      θ.δ.ο. ισχύει και για $ n+1 $. Πράγματι:
+      \begin{align*}
+        (1+a)^{n+1} &= (1+a)^{n}\cdot (1+a) \geq (1+na+ 
+        \frac{n(n-1)a^{2}}{2})(1+a) \\
+                    &= 1+na+ \frac{n(n-1)a^{2}}{2} + a + na^{2} + 
+                    \frac{n(n-1)a^{3}}{2} \\
+                    &= 1+(n+1)a+ \frac{n^{2}-n+2n}{2} a^{2} + 
+                    \frac{n(n-1)}{2} a^{3} \\
+                    &\overset{a>0}{>} 1+(n+1)a + \frac{n(n+1)}{2} a^{2}
+      \end{align*}
+    \end{proof}
+
+  \item \textcolor{Col1}{Να δείξετε ότι οι παρακάτω αριθμοί είναι άρρητοι.
+      \begin{enumerate}
+        \item $ \sqrt{3} $ και  $ \sqrt{5} $
+        \item $ \sqrt[3]{2} $ και $ \sqrt[3]{3} $
+        \item $ \sqrt{2} + \sqrt{3} $ και $ \sqrt{2} + \sqrt{6} $ 
+    \end{enumerate}}
+\end{enumerate}
+\begin{proof}
+\item {}
+  \begin{enumerate}[i)]
+    \item Έστω $ \sqrt{2} + \sqrt{6} $ ρητός. Άρα $ (\sqrt{2} +
+      \sqrt{6} )^{2} = 2 + 2 \sqrt{12} + 6 = 8 + 4 \sqrt{3} $ 
+      ρητός, που σημαίνει ότι $ \sqrt{3} $ είναι ρητός (
+      θυμάμαι ότι ρητός + άρρητος = άρρητος). Άτοπο, 
+      γιατί $ \sqrt{3} $ άρρητος.
+  \end{enumerate}
+\end{proof}
+\end{multicols}
+
+
+\end{document}

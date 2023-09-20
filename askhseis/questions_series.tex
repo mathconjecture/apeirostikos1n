@@ -1,0 +1,144 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz}
+
+\pagestyle{askhseis}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col2}{Σειρές (Ερωτήσεις)}}
+\end{center}
+
+% \section*{Ακολουθίες}
+
+\vspace{\baselineskip}
+
+\hfill \textcolor{Col1}{\textbf{Σωστό}} \quad \textcolor{Col1}{\textbf{Λάθος}}
+\begin{enumerate}[itemsep=.5\baselineskip]
+  \item \textcolor{Col1}{Αν μια σειρά είναι συγκλίνουσα, τότε η ακολουθία των μερ.
+    αθροισμάτων της είναι φραγμένη}. 
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: $ \sum_{n=1}^{\infty} a_{n} \; \text{συγκλίνει} \; \Leftrightarrow \lim_{n \to
+    \infty} S_{n} = S \in \mathbb{R} $, άρα αφού είναι συγκλίνουσα, είναι και φραγμένη. 
+
+  \item \textcolor{Col1}{Αν η ακολουθία των μερ. αθροισμάτων μιας σειράς, δεν είναι
+    φραγμένη, τότε η σειρά αποκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: είναι το αντιθετοαντίστροφο της παραπάνω πρότασης.
+
+  \item \textcolor{Col1}{Αν $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει, τότε 
+      $ {(a_{n})}_{n \in \mathbb{N}} $ είναι φραγμένη}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει $ \Rightarrow \lim_{n \to \infty} a_{n} =
+    0 $, δηλ. $ {(a_{n})}_{n \in \mathbb{N}} $ συγκλίνει, άρα φραγμένη
+
+  \item \textcolor{Col1}{Αν η $ {(a_{n})}_{n \in \mathbb{N}} $ είναι μηδενική, τότε η
+    σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: π.χ. $ \lim_{n \to \infty} \frac{1}{n} = 0 $ όμως $ \sum_{n=1}^{\infty}
+    \frac{1}{n} $ αποκλίνει 
+
+  \item \textcolor{Col1}{Αν $ a_{n} \geq 0, \; \forall n \in
+    \mathbb{N} $, τότε η σειρά $ \sum_{n=1}^{\infty} a_{n} $ απειρίζεται θετικά}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: θεώρημα: αν $ a_{n} \geq 0, \; \forall n \in \mathbb{N} $, τότε η σειρά 
+    $ \sum_{n=1}^{\infty} a_{n} $ \textbf{συγκλίνει} ή απειρίζεται θετικά.
+
+  \item \textcolor{Col1}{Αν $ a_{n} > 0, \; \forall n \in \mathbb{N} $ και $ {(S_{n})}_{n
+    \in \mathbb{N}}$ φραγμένη, τότε η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: είναι το παραπάνω θεώρημα, (ενώ αν \textbf{δεν} είναι φραγμένη, απειρίζεται 
+    θετικά). 
+
+  \item \textcolor{Col1}{Οι $ \sum_{n=1}^{\infty} a_{n} $ και $
+      \sum_{n=1}^{\infty} a_{n+ n_{0}}, \; n_{0} \in \mathbb{N} $ 
+    παρουσιάζουν ίδια συμπεριφορά ως προς τη σύγκλιση}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: πρόταση: $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει $ \Leftrightarrow
+    \sum_{n=n_{0}}^{\infty} a_{n} $ συγκλίνει (είναι αν και μόνον αν πρόταση).
+
+  \item \textcolor{Col1}{Αν $ a_{n} < 0, \; \forall n \in \mathbb{N} $, τότε $
+    \sum_{n=1}^{\infty} a_{n} = - \infty $}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: αν $ {(S_{n})}_{n \in \mathbb{N}} $ είναι φραγμένη, θα συγκλίνει, 
+    αλλιώς, θα απειρίζεται αρνητικά 
+
+  \item \textcolor{Col1}{$ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty}
+      b_{n} = b, \Rightarrow \sum_{n=1}^{\infty} (\kappa a_{n} + \lambda b_{n}) 
+    = k a + \lambda b $}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: είναι πρόταση. 
+
+  \item \textcolor{Col1}{αν $ \sum_{n=1}^{\infty} a_{n} $, $ \sum_{n=1}^{\infty} b_{n} $ 
+    σειρές, με $ a_{n}=b_{n}, \; \forall n \geq n_{0} $, τότε ίδια συμπεριφορά ως προς τη
+  σύγκλιση}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: η σύγκλιση της σειράς δεν επηρεάζεται από την προσθήκη πεπερασμένου πλήθους
+    αρχικών όρων.
+
+  \item \textcolor{Col1}{Αν $ \sum_{n=1}^{\infty} a_{n}$ συγκλίνει και $
+    \sum_{n=1}^{\infty} b_{n} $ αποκλίνει, τότε η 
+  $ \sum_{n=1}^{\infty}(a_{n}+b_{n}) $ αποκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: είναι πρόταση 
+
+  \item \textcolor{Col1}{Αν $ \sum_{n=1}^{\infty} a_{n}$ συγκλίνει, τότε 
+    $ \sum_{n=1}^{\infty} \frac{1}{a_{n}} $ αποκλίνει.}
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: $ \sum_{n=1}^{\infty} a_{n} $ συγκλ. $ \Rightarrow \lim_{n \to \infty} a_{n} = 0
+    \Rightarrow \lim_{n \to \infty} \frac{1}{a_{n}} = \infty \neq 0 \Rightarrow
+    \sum_{n=1}^{\infty} \frac{1}{a_{n}} $ αποκλίνει.
+
+  \item \textcolor{Col1}{Αν $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει τότε $
+    \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει απολύτως}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: θεώρημα: $ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει $ \Rightarrow
+    \sum_{n=1}^{\infty} a_{n} $ συγκλίνει απολύτως.
+
+  \item \textcolor{Col1}{Αν μια σειρά έχει θετικούς όρους, τότε \textbf{σύγκλιση} 
+    και \textbf{απόλυτη σύγκλιση} είναι το ίδιο.}
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: προφανώς, γιατί $ \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} \abs{a_{n}} $ 
+
+  \item \textcolor{Col1}{η $ \sum_{n=1}^{\infty} a^{n} $ αποκλίνει $ \Leftrightarrow
+    \abs{a} \geq 1 $}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: η γεωμετρική σειρά $ \sum_{n=1}^{\infty} a^{n} $ συγκλίνει 
+    $ \Leftrightarrow \abs{a} < 1 $ και αποκλίνει αν $ \abs{a} \geq 1 $
+
+  \item \textcolor{Col1}{η $ \sum_{n=1}^{\infty} \frac{1}{\sqrt[3]{n}} $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: είναι \textbf{γενικ. αρμονική} σειρά, $ \sum_{n=1}^{\infty} 
+    \frac{1}{\sqrt[3]{n}} = \sum_{n=1}^{\infty} \frac{1}{n^{1/3}} $ 
+    αποκλίνει, γιατί $ p=1/3 < 1 $.
+
+  \item \textcolor{Col1}{Το άθροισμα της σειράς $ \sum_{n=0}^{\infty}
+    \frac{1}{(1+ \mathrm{e})^{n}} = \mathrm{e} $}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: είναι \textbf{γεωμετρική} με $ \lambda = \frac{1}{1+ \mathrm{e}} < 1 
+    $, άρα  $ \sum_{n=1}^{\infty} \frac{1}{(1+ \mathrm{e})^{n}} = \sum_{n=1}^{\infty}
+    \left(\frac{1}{1+ \mathrm{e}}\right)^{n} = \frac{1+ \mathrm{e}}{\mathrm{e}} $
+
+    
+
+\end{enumerate}
+\end{document}

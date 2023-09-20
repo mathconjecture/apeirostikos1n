@@ -1,0 +1,376 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+
+\pagestyle{askhseis}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\begin{center}
+  \minibox[c]{\large \bfseries \textcolor{Col1}{Ακολουθίες} \\ \large
+  \textcolor{Col1}{Ασκήσεις}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+\setcounter{chapter}{1}
+\section{Φραγμένες Ακολουθίες}
+
+\begin{enumerate}
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n}{3^{n}} $ είναι 
+    φραγμένη. 
+
+    \begin{proof}
+    \item {}
+      Από ανισότητα Bernoulli, έχουμε 
+      $ \inlineequation[eq:ask1a]{3^{n}=(1+2)^{n} \geq 1+2n}, \; \forall n \in 
+      \mathbb{N} $. Άρα 
+      \[
+        \abs{a_{n}} = \abs{\frac{n}{3^{n}}} =  \frac{n}{3^{n}} 
+        \overset{\eqref{eq:ask1a}}{\leq} \frac{n}{1+2n} < \frac{n}{2n} 
+        = \frac{1}{2}, \; \forall n \in \mathbb{N}
+      \] 
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n!}{n^{n}} $ είναι 
+    φραγμένη. 
+    \begin{proof}
+      \[
+        \abs{a_{n}} = \abs{\frac{n!}{n^{n}}} = \frac{n!}{n^{n}} = 
+        \frac{1 \cdot 2 \cdots n}{n^{n}} \leq 
+        \frac{\overbrace{n \cdot n \cdots n}^ 
+        {n-\text {φορές}}}{n^{n}} = \frac{n^{n}}{n^{n}} 
+        = 1, \; \forall n \in \mathbb{N}
+      \]
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{\cos{n} + n 
+    \sin{n}}{n^{2}} $ είναι φραγμένη. 
+    \begin{proof}
+      \begin{align*}
+        \abs{\frac{\cos{n} + n \sin{n}}{n^{2}}} = 
+        \frac{\abs{\cos{n} + n \sin{n}}}{n^{2}} \leq 
+        \frac{\abs{\cos{n}} + \abs{n \sin{n}}}{n^{2}} 
+               &= \frac{\abs{\cos{n}} + n \abs{\sin{n}}}{n^{2}} \leq 
+               \frac{1 + n\cdot 1}{n^{2}} = \\
+               &= \frac{1}{n^{2}} + \frac{1}{n} \leq 
+               1 + 1 = 2, \; \forall n \in \mathbb{N}
+      \end{align*} 
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{5 \cos^{3}{n}}{n+2} $ 
+    είναι φραγμένη.
+    \begin{proof}
+      \[
+        \abs{a_{n}} = \abs{\frac{5 \cos^{3}{n}}{n+2}} = 
+        \frac{5 \cdot \abs{\cos^{3}{n}}}{n+2} = \frac{5\cdot 
+        \abs{\cos{n}}^ {3}}{n+2} \leq  \frac{5 \cdot 1^{3}}{n+2} < 
+        \frac{5}{2}, \; \forall n \in \mathbb{N}
+      \]
+    \end{proof}
+
+    % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{3 \sin{3n}}{n^{2}} $ 
+    %     είναι φραγμένη.
+
+    %     \begin{proof}
+    %         \[
+    %             \abs{a_{n}} = \abs{\frac{3 \sin{3n}}{n^{2}}} = 
+    %             \frac{3 \cdot \abs{\sin{3n}}}{n^{2}} \leq 
+    %             \frac{3 \cdot 1}{n^{2}} \leq 3, \; \forall n \in 
+
+    %         \] 
+    %     \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{(-1)^{n}}{n} $ είναι 
+    φραγμένη.
+    \begin{proof}
+      \[
+        \abs{\frac{(-1)^{n}}{n}} = \frac{\abs{(-1)^{n}}}{n} = 
+        \frac{\abs{-1}^{n}}{n} = \frac{1}{n} \leq 1, \; \forall n \in 
+        \mathbb{N} 
+      \] 
+    \end{proof}
+
+    % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n}{2^{n}}  $ είναι 
+    %     φραγμένη.
+
+    %     \begin{proof}
+    %     \item {}
+    %         $ 2^{n} = (1+1)^{n} \geq 1+1\cdot n > n, \; \forall n \in 
+    %         \mathbb{N} $ 
+    %         \[
+    %             0 < a_{n} = \frac{n}{2^{n}} < \frac{n}{n} = 1, \; 
+    % \forall n \in              \mathbb{N} 
+    %         \]
+    %     \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{1} = 3, \; a_{n+1} =
+    \frac{a_{n}+4}{2}, \; \forall n \in \mathbb{N} $ είναι άνω φραγμένη.
+    \begin{proof}
+    \item {}
+      Προφανώς, $ a_{n} > 0, \; \forall n \in \mathbb{N} $ 
+
+      Παρατηρούμε ότι, $ a_{2}=3.5, \; a_{3}=3.75, \; a_{4}=3.875, \; 
+      \ldots $
+
+      Θ.δ.ο. $ a_{n} < 4, \; \forall n \in \mathbb{N} $ 
+      \begin{itemize}
+        \item Για $ n=1 $, έχουμε: $ a_{1}=3 < 4 $, ισχύει.
+        \item Έστω ότι ισχύει για $n$, δηλαδή $ a_{n} < 4 $
+        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι
+          \[
+            a_{n}<4 \Leftrightarrow a_{n}+4 < 8 \Leftrightarrow 
+            \frac{a_{n}+4}{2} < 4 \Leftrightarrow a_{n+1} <4
+          \] 
+      \end{itemize}
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{1} = \sqrt{2}, \; a_{n+1} =
+    \sqrt{2+ a_{n}}, \; \forall n \in \mathbb{N} $ είναι άνω φραγμένη.
+    \begin{proof}
+    \item {}
+      Προφανώς, $ a_{n} > 0, \; \forall n \in \mathbb{N} $ 
+
+      Παρατηρούμε ότι, $ a_{2}= \sqrt{2 + \sqrt{2}} < \sqrt{2+2} =2, \; 
+      a_{3}= \sqrt{2+ \sqrt{2 + \sqrt{2}}} < \sqrt{2+ \sqrt{2+2}} = 2, 
+      \ldots $ 
+
+      Θ.δ.ο. $ a_{n} < 2, \; \forall n \in \mathbb{N} $ 
+      \begin{itemize}
+        \item Για $ n=1 $, έχουμε: $ a_{1}= \sqrt{2} < 2 $, ισχύει.
+        \item Έστω ότι ισχύει για $n$, δηλαδή $ a_{n} < 2 $
+        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι
+          \[
+            a_{n}<2 \Leftrightarrow 2+a_{n} < 4 \Leftrightarrow 
+            \sqrt{2+ a_{n}} < 2\Leftrightarrow a_{n+1} <2
+          \] 
+      \end{itemize}
+    \end{proof}
+
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = 1 + \frac{1}{1!} +
+    \frac{1}{2!} + \cdots + \frac{1}{n!} $ είναι άνω φραγμένη.
+    \begin{proof}
+    \item {} 
+      Ισχύει ότι $ n! > 2^{n-1}, \; \forall n \in \mathbb{N} $, άρα 
+      \begin{align*}
+        a_{n} &= 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + 
+        \frac{1}{4!} + \cdots \frac{1}{n!} < 1 + 
+        \underbrace{\frac{1}{2^{0}} 
+          + \frac{1}{2^{1}} + \frac{1}{2^{2}} + \frac{1}{2^{3}} 
+        + \cdots \frac{1}{2^{n-1}}}_ {\text{γεωμ. πρόοδος}} = 
+        1 + \frac{\left(\frac{1}{2}\right)^{n}-1}{\frac{1}{2} -1} =\\ 
+              &= 1 + 2\left(1- \frac{1}{2^{n}}\right) = 1+2- 
+              \frac{1}{2^{n-1}} < 3 
+      \end{align*} 
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = 2^{n} $ δεν είναι άνω 
+    φραγμένη.
+    \begin{proof}
+    \item {} 
+      Έστω ότι η $ a_{n}=2^{n} $ είναι άνω φραγμένη. Τότε 
+
+      \begin{minipage}{0.35\textwidth}
+        \begin{itemize}
+          \item $ \exists M \in \mathbb{R} \; : \; 2^{n} \leq M, \; 
+            \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+          \item $ 2^{n}=(1+1)^{n} \geq 1+n, \; \forall n \in 
+            \mathbb{N} $ \hfill \tikzmark{b}
+        \end{itemize}    
+      \end{minipage}
+      \mybrace{a}{b}[$ M \geq 1+n \Leftrightarrow n \leq M-1, \; 
+      \forall n \in \mathbb{N} $] 
+
+      άτοπο, γιατί $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+    \end{proof}
+
+    % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{3} + \sin{5n}}{n} $ 
+    %     δεν είναι φραγμένη.
+
+    %     \begin{proof}
+    %     \item {}
+    %         Έστω ότι η $ a_{n}= \frac{n^{3}+ \sin{5n}}{n} $ είναι φραγμένη. 
+    %         Τότε 
+
+    %         \begin{minipage}{0.6\textwidth}
+    %             \begin{itemize}
+    %                 \item $ \exists M>0 \; : \; \abs{\frac{n^{3}+ 
+    %                         \sin{5n}}{n}} \leq M \Leftrightarrow \abs{n^{3}+ 
+    %                     \sin{5n}} \leq nM  \; $ 
+    %                     \hfill \tikzmark{a}
+    %                 \item $ n^{2}-1 < n^{3}-1 \leq \abs{n^{3}}- \abs{\sin{5n}} 
+    %                     \leq \abs{n^{3}+ \sin{5n}}$ 
+    %                     \hfill \tikzmark{b}
+    %             \end{itemize}
+    %         \end{minipage}
+
+    %         \mybrace{a}{b}[$n^{2}-nM-1<0 $] 
+    %         Το οποίο ισχύει ανν $ r_{1}<n< r_{2} $,
+    %         όπου $ r_{1}, r_{2} $ οι ρίζες του τριωνύμου, το οποίο έχει $ 
+    %         \Delta= M^{2} + 4 > 0$. Όμως αυτό είναι άτοπο, γιατί $ \mathbb{N} $ 
+    %         δεν είναι άνω φραγμένο.
+    %     \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{2}}{3n+ 
+    \sin^{2}{n}} $ δεν είναι άνω φραγμένη.
+    \begin{proof}
+    \item {}
+      Έστω ότι η $ a_{n}= \frac{n^{2}}{3n+ \sin^{2}{n}} $ είναι άνω φραγμένη.
+      Τότε, θα είναι φραγμένη, γιατί προφανώς $ 0 \leq a_{n}, \; \forall n \in
+      \mathbb{N} $, άρα
+      \[
+        \exists M>0 \; : \; \abs{\frac{n^{2}}{3n+ \sin^{2}{n}}} 
+        \leq M \Leftrightarrow n^{2} \leq M(3n+ \sin^{2}{n}) \leq 
+        M(3n+1) \Leftrightarrow n^{2}-3Mn-M \leq 0, \; \forall n \in \mathbb{N}
+      \]
+      Το οποίο ισχύει ανν $ r_{1}<n< r_{2} $,
+      όπου $ r_{1}, r_{2} $ οι ρίζες του τριωνύμου, το οποίο έχει $ 
+      \Delta= 9M^{2}+4M >0 $. Όμως αυτό είναι άτοπο, γιατί $ \mathbb{N} $ 
+      δεν είναι άνω φραγμένο.
+    \end{proof}
+\end{enumerate}
+
+
+\section{Μονότονες Ακολουθίες}
+
+
+\begin{enumerate}
+
+  \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{5n -1} $ είναι 
+    γνησίως φθίνουσα.
+    \begin{proof}
+      \begin{align*} 
+        a_{n+1}- a_{n} = \frac{n+1}{5(n+1)-1} - \frac{n}{5n -1} = 
+        \frac{n+1}{5n+4} - \frac{n}{5n-1} 
+                    &= \frac{5n^{2}+5n-n-1-5n^{2}-4n}{(5n+4)(5n-1)} \\ 
+                    &= - \frac{1}{(5n+4)(5n-1)} < 0 
+      \end{align*} 
+    \end{proof}
+
+  \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{3^{n}} $ είναι 
+    γνησίως φθίνουσα.
+    \begin{proof}
+      \[
+        a_{n+1}- a_{n} = \frac{n+1}{3^{n+1}} - \frac{n}{3^{n}} = 
+        \frac{n+1-3n}{3^{n+1}} = \frac{1-2n}{3^{n+1}} < 0, \; 
+        \forall n \in \mathbb{N}
+      \] 
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{2^{n}}{n!} $ είναι γνησίως 
+    φθίνουσα.
+    \begin{proof}
+    \item {}
+      Είναι $ a_{n}>0, \; \forall n \in \mathbb{N} $, επομένως η 
+      ακολουθία διατηρεί πρόσημο, όποτε
+      \[
+        \frac{a_{n+1}}{a_{n}} = \frac{\frac{2^{n+1}}{(n+1)!}}
+        {\frac{2^{n}} {n!}} = \frac{2^{n+1}}{2^{n}} \cdot 
+        \frac{n!}{(n+1)!} = \frac{2}{n+1} \leq 1, \; \forall n \in 
+        \mathbb{N}
+      \] 
+    \end{proof}
+    
+  \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{2n^{2}-1}{n} $ είναι γνησίως 
+    αύξουσα.
+    \begin{proof}
+      \[
+        a_{n+1}- a_{n} = \frac{2(n+1)^{2}-1}{n+1} - \frac{2n^{2}-1}{n} 
+        = \cdots = \frac{2n^{2}+2n+1}{n(n+1)} >0, \; \forall n 
+        \in \mathbb{N}
+      \] 
+    \end{proof}
+
+  \item Να δείξετε ότι η ακολουθία $ a_{1}=0, a_{n+1}= 
+    \frac{2 a_{n}+4}{3}, \; \forall n \in \mathbb{N} $ είναι γνησίως 
+    αύξουσα.
+    \begin{proof}
+    \item {}
+      \begin{description}
+        \item 
+          Θα δέιξουμε ότι $ a_{n+1}> a_{n}, \; \forall n \in 
+          \mathbb{N} $. Πράγματι,
+          \begin{itemize}
+            \item Για $ n=1 $, έχουμε $ a_{2}= \frac{4}{3} > 0 
+              = a_{1}$, ισχύει.
+            \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n+1} > a_{n} $.
+            \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+              \[
+                a_{n}< a_{n+1} \Leftrightarrow 2 a_{n} 
+                < 2 a_{n+1} 
+                \Leftrightarrow 2 a_{n}+4 < 2 a_{n+1}+4 
+                \Leftrightarrow \underbrace{\frac{2 a_{n}+4}{3}}
+                _{a_{n+1}} < 
+                \underbrace{\frac{2 a_{n+1}+4}{3}}_{a_{n+2}}, 
+                \; \forall n \in \mathbb{N}
+              \]
+          \end{itemize}
+
+        \item [Β᾽ Τρόπος:]
+          \[
+            a_{n+1}- a_{n} > 0 \Leftrightarrow \frac{2 a_{n}+4}{3} 
+            - a_{n}>0 
+            \Leftrightarrow \frac{4 - a_{n}}{3} > 0 
+            \Leftrightarrow a_{n}< 4, \; \forall n \in \mathbb{N}
+          \] 
+          Θα δείξουμε ότι $ a_{n}<4, \; \forall n \in \mathbb{N} $.
+          Πράγματι,
+          \begin{itemize}
+            \item Για $ n=1 $, έχουμε $ a_{1}=0 < 4 $, ισχύει.
+            \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n}<4 $
+            \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+              \[
+                a_{n+1}= \frac{2 a_{n}+4}{3} < \frac{2\cdot 4 
+                + 4}{3} = \frac{12}{3} = 4
+              \] 
+          \end{itemize}
+      \end{description}
+    \end{proof}
+
+  \item Να δείξετε ότι ακολουθία $ a_{1}=1, a_{n} = \sqrt{a_{n}+1}, \; 
+    \forall n \in \mathbb{N}$ είναι γνησίως αύξουσα.
+    \begin{proof}
+      \begin{itemize}
+        \item Για $ n=1 $, έχω $ a_{1}=1 < \sqrt{2} = a_{2} $, ισχύει.
+        \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n}< a_{n+1} $
+        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+          \[
+            a_{n} < a_{n+1} \Leftrightarrow a_{n}+1 < a_{n+1}+1 
+            \Leftrightarrow \sqrt{a_{n}+1} < \sqrt{a_{n+1}+1} 
+            \Leftrightarrow a_{n+1}< a_{n+2}
+          \] 
+      \end{itemize}
+    \end{proof}
+
+  \item Να δείξετε ότι ακολουθία $ a_{n} = (-1)^{n} \frac{1}{n^{2}+2} $ 
+    δεν είναι μονότονη.
+    \begin{proof}
+    \item {}
+      Θα δείξουμε ότι η ακολουθία δεν διατηρεί πρόσημο. Πράγματι, 
+      $ \forall n \in \mathbb{N} $
+      \begin{align*}
+        a_{n+1}- a_{n} = \frac{(-1)^{n+1}}{(n+1)^{2}+2} - 
+        \frac{(-1)^{n}} {n^{2}+2} 
+                        &= \frac{(-1)^{n+1}}{(n+1)^{2}+2} + 
+                        \frac{(-1)^{n+1}}{n^{2}+2}= \\
+                        &= (-1)^{n+1}\Biggl[\underbrace{\frac{1}{(n+1)^{2}+2} + 
+                            \frac{1}{n^{2}+2}}_{b_{n} > 0, \; \forall n \in 
+                        \mathbb{N}}\Biggr] 
+                        = \begin{cases}
+                          -b_{n}, & n \; \text{περιττός} \\
+                          b_{n}, & n \; \text{άρτιος} 
+                        \end{cases}
+      \end{align*} 
+    \end{proof}
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
+

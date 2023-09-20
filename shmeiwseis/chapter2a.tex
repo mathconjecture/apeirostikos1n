@@ -1,0 +1,622 @@
+\documentclass[a4paper,table]{report}
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\newcommand{\twocolumnsidesss}[2]{\begin{minipage}[t]{0.49\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.49\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+
+\pagestyle{askhseis}
+
+\zexternaldocument*{chapter1}
+
+\begin{document}
+
+\refstepcounter{chapter}
+\chapter*{Ακολουθίες}
+
+\section{Ορισμός Ακολουθίας}
+
+\begin{mybox1}
+  \begin{dfn}
+    \textcolor{Col1}{Ακολουθία} πραγματικών αριθμών ονομάζεται 
+    κάθε συνάρτηση με πεδίο ορισμού τους φυσικούς αριθμούς. 
+    \begin{align*}
+      a \colon &\mathbb{N} \to \mathbb{R} \\
+               &n \mapsto a(n)=a_{n} \quad (\text{ν-οστός όρος})
+    \end{align*} 
+    Οι ακολουθίες συμβολίζονται ως $ (a_{n})_{n \in \mathbb{N}} $ 
+    ή $ ( a_{n} ) _{n=1}^{+\infty}$  ή $ \{ a_{n} \} _{n \in \mathbb{N}} $ ή 
+    $ \{ a_{n} \} _{n=1}^{+\infty}$ , κλπ.
+  \end{dfn}
+\end{mybox1}
+
+\begin{mybox1}
+  \begin{dfn}
+    \textcolor{Col1}{Σύνολο Τιμών} (Σ.Τ.) της ακολουθίας 
+    $ (a_{n})_{n \in \mathbb{N}} $, ονομάζουμε το \textbf{σύνολο των όρων της}, 
+    δηλαδή το σύνολο $ \{ a_{1}, a_{2}, \ldots, a_{n}, \ldots \} = \{ a_{n} \; : \; n
+    \in \mathbb{N} \} $ το οποίο μπορεί να είναι πεπερασμένο ή άπειρο.
+  \end{dfn}
+\end{mybox1}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η ακολουθία $ Η ακολουθία a_{n} = n, \; \forall n \in \mathbb{N} $. 
+      Έχει Σ.Τ.\  το σύνολο $  \{ 1,2,3, \ldots \} $.
+    \item Η ακολουθία $ a_{n}=\left(\frac{1}{n}\right)_{n \in \mathbb{N}} $. 
+      Έχει Σ.Τ.\ το σύνολο $  \left\{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \right\} $.
+    \item Η ακολουθία $ a_{n}= \{(-1)^{n}\}_{n=1}^{+ \infty}, $. Έχει Σ.Τ.\ 
+      το σύνολο $ \{ -1,1 \} $.
+    \item Η ακολουθία $ a_{n} = c, \; \forall n \in \mathbb{N}, c \in \mathbb{R} $.
+      Έχει Σ.Τ.\ το σύνολο $ \{ c \} $ και ονομάζεται 
+      \textcolor{Col1}{σταθερή ακολουθία}.
+    \item Η ακολουθία $ a_{n}=2n, \; \forall n \in \mathbb{N} $. Έχει Σ.Τ.\ το 
+      σύνολο $ \{ 2,4,6, \ldots, 2n, \ldots \} $, δηλαδή όλους τους
+      \textcolor{Col1}{άρτιους} φυσικούς αριθμούς.
+    \item Η ακολουθία $ a_{n}= 2n-1, \; \forall n \in \mathbb{N} $. Έχει Σ.Τ.\ το 
+      σύνολο $ \{ 1,3,5, \ldots, 2n-1, \ldots \} $, δηλαδή όλους τους περιττούς
+      φυσικούς αριθμούς.
+    \item \label{ex:anadr} Η ακολουθία $ a_{1}= a_{2} = 1 $ και $ a_{n+2}=a_{n+1}
+      +a_{n}, \; \forall n \in \mathbb{N}$. Έχει Σ.Τ.\ το σύνολο 
+      $ \{ 1,1,2,3,5,8, 13,21,34, \ldots\} $.  Πρόκειται για την 
+      \textcolor{Col1}{ακολουθία Fibonacci}. 
+  \end{enumerate}
+\end{examples}
+
+\begin{rem}
+\item {}
+  \begin{enumerate}[i)]
+    \item Ουσιαστικά οι ακολουθίες είναι άπειρες \textbf{λίστες} πραγματικών αριθμών.
+    \item Η ακολουθία~\ref{ex:anadr}, όπου κάθε επόμενος όρος, ορίζεται με 
+      τη βοήθεια του προηγούμενου, λέγεται
+      \textcolor{Col1}{αναδρομική ακολουθία}.  Προτάσεις που αφορούν 
+      αναδρομικές ακολουθίες, αποδεικνύονται με \textbf{Μαθηματική Επαγωγή}.
+  \end{enumerate}
+\end{rem}
+
+\begin{mybox1}
+  \begin{dfn}
+    Δυο ακολουθίες, $(a_{n})_{n \in \mathbb{N}}$  και $ (b_{n})_{n \in \mathbb{N}} $ 
+    ονομάζονται \textcolor{Col1}{ίσες}, αν 
+    $ a_{n} = b_{n}, \; \forall n \in \mathbb{N} $.
+  \end{dfn}
+\end{mybox1}
+
+\begin{mybox1}
+  \begin{dfn}
+    Οι πράξεις μεταξύ ακολουθιών, ορίζονται όπως ακριβώς και για τις συναρτήσεις.
+  \end{dfn}
+\end{mybox1}
+\begin{example}
+  Αν $ {(a_{n})}_{n \in \mathbb{N}} $ και $ {(b_{n})}_{n \in \mathbb{N}} $ ακολουθίες,
+  τότε ορίζουμε το άθροισμα $ (a+b)_{n} = a_{n} + b_{n}, \; \forall n \in \mathbb{N} $
+\end{example}
+
+
+\section{Φραγμένες Ακολουθίες}
+
+\begin{mybox1}
+  \begin{dfn}
+    Μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ ονομάζεται:
+    \begin{enumerate}[i)]
+      \item \textcolor{Col1}{άνω φραγμένη} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} \exists M \in 
+        \mathbb{R} \; : \; a_{n} \leq M, \; \forall n \in \mathbb{N}$.
+      \item \textcolor{Col1}{κάτω φραγμένη} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} \exists m \in 
+        \mathbb{R} \; : \; m \leq a_{n}, \; \forall n \in \mathbb{N}  $
+      \item \textcolor{Col1}{φραγμένη} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} $ είναι άνω και κάτω φραγμένη.
+    \end{enumerate}
+  \end{dfn}
+\end{mybox1}
+
+\begin{mybox3}
+  \begin{prop}\label{prop:apolfragm}
+    {$ (a_{n})_{n \in \mathbb{N}} $ φραγμένη $ \Leftrightarrow \exists M \in 
+      \mathbb{R}, \; M>0 \; : \; \abs{a_{n}} \leq M, \; \forall n \in \mathbb{N} $ 
+    (\textbf{απολύτως φραγμένη}).}
+  \end{prop}
+\end{mybox3}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [($ \Rightarrow $)] Έστω $ (a_{n})_{n \in \mathbb{N}} $ φραγμένη. Τότε η 
+      $ (a_{n})_{n \in \mathbb{N}} $ είναι άνω και κάτω φραγμένη, δηλαδή υπάρχουν 
+      $ m,M \in \mathbb{R} $ ώστε $ m \leq a_{n} \leq M, \; \forall n \in \mathbb{N} $.
+      Θεωρούμε $ \mu = \max \{ \abs{m} , \abs{M} \} $. Τότε, η παραπάνω διπλή 
+      ανισότητα, λαμβάνοντας υπόψιν και τις γνωστές ιδιότητες της απόλυτης τιμής, 
+      γίνεται
+      \[
+        - \mu \leq - \abs{m} \leq m \leq a_{n} \leq M \leq \abs{M} \leq \mu , 
+        \quad \forall n \in \mathbb{N}
+      \]
+      Επομένως $ \exists \mu > 0 $ ώστε 
+      $ \abs{a_{n}} \leq \mu, \; \forall n \in \mathbb{N} $.
+
+    \item[(Β' Τρόπος:)]
+      Θεωρούμε $ \mu > \max \{ \abs{m} , \abs{M} \} $. Τότε, η παραπάνω διπλή 
+      ανισότητα γίνεται,
+      \[
+        - \mu < m \leq a_{n} \leq M < \mu  
+      \] 
+
+    \item [($ \Leftarrow$)] Προφανώς, αν $( a_{n})_{n \in \mathbb{N}} $ είναι 
+      απολύτως φραγμένη, τότε $ \exists M>0 $ ώστε $ -M \leq a_{n} \leq M, \; \forall n
+      \in \mathbb{N} $, και άρα η ακολουθία είναι φραγμένη. 
+  \end{description}
+\end{proof}
+
+\begin{rem}
+  Πολλές φορές στη βιβλιογραφία, η πρόταση~\ref{prop:apolfragm}, 
+  δίνεται και ως ορισμός της φραγμένης ακολουθίας.
+\end{rem}
+
+\begin{examples}
+\item {}  
+  \begin{enumerate}[i)]
+    \item Η ακολουθία $ a_{n}= \frac{1}{n}, \; \forall n \in \mathbb{N} $, είναι 
+      φραγμένη.
+      Πράγματι, προφανώς, ισχύει ότι $ 0 \leq \frac{1}{n} \leq 1, \; \forall n \in 
+      \mathbb{N} $. 
+
+      Επίσης, $ \abs{\frac{1}{n}} = \frac{1}{n} \leq 1, \; \forall n \in \mathbb{N} $, 
+      άρα είναι και απολύτως φραγμένη.
+
+    \item Η ακολουθία $ a_{n}=(-1)^{n} \frac{2}{n}, \; \forall n \in \mathbb{N} $ 
+      είναι απολύτως φραγμένη. Πράγματι,
+      \[
+        \abs{a_{n}} = \abs{(-1)^{n} \frac{2}{n}} = \abs{(-1)^{n}} 
+        \cdot \abs{\frac{2}{n}} = \abs{-1}^{n} \cdot \frac{2}{n}
+        = 1 \cdot \frac{2}{n} = \frac{2}{n} \leq 2, \; \forall n \in \mathbb{N}
+      \] 
+
+    \item Η ακολουθία $ a_{n}= \frac{3\sin{n} + \cos^{2}n}{n^{2}} , \; 
+      \forall n \in \mathbb{N} $ είναι φραγμένη. Πράγματι, 
+
+      \[
+        \abs{a_{n}} = \abs{\frac{3\sin{n} + \cos^{2}{n}}{n^{2}}} = \frac{\abs{3
+          \sin{n} + \cos^{2}{n}}}{n^{2}} \leq \frac{3\abs{\sin{n}} +
+        \abs{\cos{n}}^{2}}{n^{2}} \leq \frac{3\cdot 1 + 1^{2}}{n^{2}} = \frac{4}{n^{2}}
+        \leq 4
+      \] 
+
+    \item Η ακολουθία $ a_{n}= \frac{n}{2^{n}}, \; \forall n \in \mathbb{N} $ είναι 
+      φραγμένη. Πράγματι, προφανώς, $ 0 \leq a_{n}, \; \forall n \in \mathbb{N} $. 
+      \[
+        2^{n} = (1+1)^{n} \geq 1+n > n, \; \forall n \in \mathbb{N} 
+      \]
+      Άρα 
+      \[
+        a_{n}= \frac{n}{2^{n}} < \frac{n}{n} = 1, \; \forall n \in \mathbb{N}
+      \]
+
+    \item Η ακολουθία $ a_{n}= \frac{(n-1)!}{n^{n}}, \; \forall n \in \mathbb{N} $
+      είναι φραγμένη. Πράγματι, 
+
+      $ a_{n} > 0, \; \forall n \in 
+      \mathbb{N}$, άρα 0 κ.φ.\ της $( a_{n})_{n \in 
+      \mathbb{N}} $. 
+      Επίσης 
+      \[
+        a_{n}= \frac{(n-1)!}{n^{n}} = \frac{1 \cdot 2 
+          \cdots (n-1)}{n^{n}} < \frac{\smash{\overbrace{n 
+              \cdot n \cdots n} ^{n-1 \; 
+        \text{φορές}}}}{n^{n}} = \frac{n^{n-1}}{n^{n}} =
+        \frac{1}{n} \leq 1, \; \forall n \in \mathbb{N},
+      \]
+      άρα το 1 είναι α.φ.\ της $(a_{n})_{n \in \mathbb{N}}$. 
+
+    \item Η ακολουθία $ a_{n}= 1 + \left(- \frac{1}{2} \right) + \left(- 
+        \frac{1}{2}\right)^{2} + \cdots + \left(-\frac{1}{2} 
+      \right) ^{n}, 
+      \; \forall n \in \mathbb{N} $ είναι απολύτως φραγμένη. Πράγματι,
+
+      Πρόκειται για το άθροισμα των $ n $ πρώτων όρων \textbf{γεωμετρικής προόδου} με 
+      λόγο $ -\frac{1}{2} $. Έτσι
+      \[ a_{n} = 1 + \left(- \frac{1}{2}\right) + \left(- \frac{1}{2} 
+        \right)^{2} + \cdots + \left(- \frac{1}{2} \right)^{n} = 
+        \frac{(- \frac{1}{2} )^{n+1}-1}{- \frac{1}{2}-1} = 
+      \frac{2}{3} \left[1 - \left(- \frac{1}{2} \right)^{n}\right] \]
+      Επομένως
+      \[
+        \abs{a_{n}} = \abs{\frac{2}{3} \left[1-\left(- \frac{1}{2} \right)^{n}
+            \right]} = \frac{2}{3} \abs{1 - \left(- 
+        \frac{1}{2}\right)^{n}} \leq 
+        \frac{2}{3} \left(1 + \abs{-\frac{1}{2} }^{n} \right) = 
+        \frac{2}{3} \left(1+ \frac{1}{2^{n}}\right) < \frac{2}{3}
+        (1+1) = \frac{4}{3} 
+      \] 
+
+    \item Η ακολουθία $ a_{n}= 2n+5, \; \forall n \in \mathbb{N} $ είναι κάτω 
+      φραγμένη.
+      Πράγματι, $ 7 \leq 2n+5, \; \forall n \in \mathbb{N} $, άρα το 
+      7 είναι κ.φ.\ της $ (a_{n} )_{n \in \mathbb{N}} $.
+
+      Προσοχή, η ακολουθία $ a_{n}= 2n+5, \; \forall n \in \mathbb{N} $ δεν είναι 
+      άνω φραγμένη, γιατί αν υποθέσουμε ότι είναι, τότε $ \exists M>0 $ ώστε 
+      $ a_{n} \leq M, \; \forall n \in \mathbb{N} 
+      \Leftrightarrow 2n+5 \leq M, \; \forall n \in \mathbb{N} 
+      \Leftrightarrow 2n \leq M-5, \; \forall n \in \mathbb{N}
+      \Leftrightarrow n \leq \frac{M-5}{2}, \; \forall n \in \mathbb{N} $, άτοπο, 
+      γιατί το $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+
+    \item Η ακολουθία $ a_{1}=2, \; a_{n+1}=2 - \frac{1}{a_{n}}, \forall n \in 
+      \mathbb{N}$
+      είναι φραγμένη. Προφανώς, $ a_{n}\leq 2, \; \forall n \in \mathbb{N} $.
+      Θα δείξουμε ότι $ a_{n}>1, \; \forall n \in \mathbb{N} $. Επειδή η ακολουθία 
+      είναι \textbf{αναδρομική}, με επαγωγή, έχουμε:
+      \begin{myitemize}[labelindent=1em]
+        \item Για $ n=1 $, $ a_{1}=2>1 $, ισχύει. 
+        \item Έστω ότι ισχύει για $n$, δηλ. $\inlineequation[eq:
+          anadepag1]{a_{n}>1}$.
+        \item Θ.δ.ο.\ ισχύει και για $ n+1 $. Πράγματι, από τη 
+          σχέση~\eqref{eq: anadepag1}, έχουμε
+          \[
+            a_{n}>1 \Rightarrow \frac{1}{a_{n}} 
+            < 1 \Rightarrow - \frac{1}{a_{n}} > 
+            -1 \Rightarrow 2 - \frac{1}{a_{n}} 
+            > 2-1 \Rightarrow a_{n+1} > 1.
+          \] 
+      \end{myitemize}
+
+    \item Να δείξετε ότι η ακολουθία, $ a_{n}=a^{n} $ με $ a>1 $ δεν είναι άνω
+      φραγμένη. 
+      \begin{proof}(Με άτοπο)
+
+        Έστω ότι η  $ a_{n} $ είναι άνω φραγμένη. Τότε $ \exists M \in \mathbb{R} $ 
+        ώστε $ \inlineequation[eq:anfragm]{a^{n} \leq M, \; 
+        \forall n \in \mathbb{N}} $.  Επειδή $ a>1 $, έχουμε 
+        $ a-1>0 $. Θέτουμε $ \theta =a-1 \Rightarrow a = 1+ \theta $, άρα 
+        \begin{equation}\label{eq:antheta}
+          a^{n} = (1+ \theta )^{n} \geq 1+ n \theta > n \theta , \; 
+          \forall n \in \mathbb{N}  
+        \end{equation} 
+        Από τις σχέσεις~\ref{eq:anfragm} και~\ref{eq:antheta}, έχουμε
+        \[
+          n \theta < M, \; \forall n \in \mathbb{N} \Leftrightarrow 
+          n < \frac{M}{\theta}, \; \forall n \in \mathbb{N}
+        \] 
+        άτοπο, γιατί το $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+      \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{2}+1}{3n+ \sin^{3}{n}} $ 
+      δεν είναι άνω φραγμένη. 
+      \begin{proof}
+      \item {}
+        Έστω ότι η $ a_{n} = \frac{n^{2}+1}{3n+ \sin^{3}{n}} $ είναι άνω 
+        φραγμένη. Τότε επειδή είναι και κάτω φραγμένη, από το 0, έχουμε ότι
+        $ \exists M>0 \; : \; \abs{a_{n}} \leq M, \; \forall n \in 
+        \mathbb{N} $, δηλαδή
+        \begin{align*}
+          \abs{\frac{n^{2}+1}{3n + \sin^{3}{n}}} \leq M \Leftrightarrow 
+          \frac{n^{2}+1}{\abs{3n + \sin^{3}{n}}} \leq M \Leftrightarrow 
+          n^{2}+1
+               &\leq M \cdot \abs{3n + \sin^{3}{n}} \\ 
+               &\leq 3nM + M \cdot \abs{\sin{n}} ^{3} \\
+               &\leq 3n M +M, \; \forall n \in \mathbb{N}
+        \end{align*} 
+        Δηλαδή, 
+        \[
+          n^{2}-3nM \leq M-1 \Rightarrow n^{2}-3nM < M, \; \forall n \in 
+          \mathbb{N}
+        \] 
+        και συμπληρώνοντας το τετράγωνο έχουμε
+        \[
+          \left(n - \frac{3}{2} M\right)^{2} < M + \frac{9}{4} M^{2}
+          \Rightarrow \abs{n - \frac{3}{2} M} < 
+          \sqrt{M + \frac{9}{4} M^{2}}, \; \forall n \in \mathbb{N}
+        \]
+        οπότε
+        \[
+          - \sqrt{M + \frac{9}{4} M^{2}}< \underbrace{n- \frac{3}{2} M 
+          < \sqrt{M + \frac{9}{4} M^{2}}}, \; \forall n \in \mathbb{N} 
+          \Rightarrow n < \frac{3}{2} M + \sqrt{M + \frac{9}{4} M^{2}}, 
+          \; \forall n \in \mathbb{N} 
+        \] 
+        άτοπο, γιατί $ \mathbb{N} $ όχι άνω φραγμένο.
+      \end{proof}
+  \end{enumerate}
+\end{examples}
+
+\begin{prop}
+  Η ακολουθία $ a_{n} = \left(1+ \frac{1}{n} \right)^{n}, \; \forall n \in \mathbb{N} $ 
+  είναι φραγμένη.
+\end{prop}
+\begin{proof}
+\item {}
+  Έχουμε ότι $ a_{n} = \left(1+ \frac{1}{n} \right)^{n} \overset{\text{Bern.}}{>} 
+  \left(1+n \frac{1}{n}\right) = 2, \; \forall n \in
+  \mathbb{N} $, επομένως είναι κάτω φραγμένη.
+
+  \begin{align*}
+    a_{n} = \left(1+ \frac{1}{n}\right)^{n} 
+    &= 1 + \binom{n}{1} \frac{1}{n} + \binom{n}{2} \frac{1}{n^{2}} + \cdots + 
+    \binom{n}{n} \frac{1}{n^{n}} \\
+    &= 1+ \frac{n}{1!} \frac{1}{n} + \frac{n(n-1)}{2!} \frac{1}{n^{2}} + \cdots + 
+    \frac{n(n-1)\cdots 2\cdot 1}{n!} \frac{1}{n^{n}} \\
+    &=1+ \frac{1}{1!} + \frac{1}{2!} \frac{n-1}{n} + \cdots + 
+    \frac{1}{n!} \frac{(n-1)\cdots 2\cdot 1}{n^{n-1}} \\
+    &<1+ \frac{1}{1!} + \frac{1}{2!} + \cdots \frac{1}{n!} = b_{n}
+  \end{align*}
+  Για την ακολουθία $b_{n}$, έχουμε:
+  \begin{align*}
+    b_{n} &= 1 + \frac{1}{1} + \frac{1}{1\cdot 2} + \frac{1}{1 \cdot 2 \cdot 3} + 
+    \cdots + \frac{1}{1\cdot 2 \cdot 3 \cdots n} \\ 
+          &< 1 + \frac{1}{1} + \frac{1}{1\cdot 2} + \frac{1}{1 \cdot 2 \cdot 2} + 
+          \cdots + \frac{1}{1\cdot 2 \cdot 2 \cdots 2} \\ 
+          &= 1 + \left(1 + \frac{1}{2} + \frac{1}{2^{2}} + \cdots + 
+          \frac{1}{2^{n-1}}\right) \\
+          &= 1 + \frac{1- (\frac{1}{2})^{n}}{1- \frac{1}{2}} = 1 + 2 \left(1 - 
+          \frac{1}{2^{n}} \right) = 3 - \frac{1}{2^{n-1}} < 3, 
+          \; \forall n \in \mathbb{N}
+  \end{align*}
+  Επομένως
+  \[
+    2 < a_{n} < 3, \; \forall n \in \mathbb{N}  
+  \]
+\end{proof}
+
+\pagebreak
+
+\section{Μονοτονία Ακολουθιών}
+
+\begin{mybox1}
+  \begin{dfn}
+    Μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ ονομάζεται:
+    \begin{enumerate}[i)]
+      \twocolumnsides{
+      \item \textcolor{Col1}{γνησίως αύξουσα} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} < a_{n+1}, 
+        \quad \forall n \in \mathbb{N}$
+      \item \textcolor{Col1}{γνησίως φθίνουσα} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} > a_{n+1}, 
+        \quad \forall n \in \mathbb{N}$
+        }{
+      \item \textcolor{Col1}{αύξουσα} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} \leq a_{n+1}, 
+        \quad \forall n \in \mathbb{N}  $.
+      \item \textcolor{Col1}{φθίνουσα} 
+        $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} \geq a_{n+1}, 
+        \quad \forall n \in \mathbb{N}  $.
+      }
+  \end{enumerate}
+\end{dfn}
+\end{mybox1}
+
+\begin{rems}
+\item {}
+  \begin{enumerate}[i)]
+    \item $ (a_{n})_{n \in \mathbb{N}} $ γνησίως αύξουσα (γνησίως φθίνουσα) $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ αύξουσα (φθίνουσα) 
+    \item $ (a_{n})_{n \in \mathbb{N}} $ φθίνουσα  $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ άνω φραγμένη, με 
+      α.φ.\ το $ a_{1} $  
+    \item $ (a_{n})_{n \in \mathbb{N}} $ αύξουσα  $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ κάτω φραγμένη, με 
+      κ.φ.\ το $ a_{1} $  
+  \end{enumerate}
+\end{rems}
+
+
+\begin{rem}\label{dfn:isodmono}
+\item {}
+  Αν μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ \textbf{διατηρεί σταθερό πρόσημο}, 
+  τότε έχουμε:
+
+  \twocolumnsidesss{
+    Αν $ a_{n}>0, \; \forall n \in \mathbb{N} $, τότε:
+    \begin{myitemize}[leftmargin=*]
+      \item $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} \Rightarrow
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{γνησίως αύξουσα}  
+      \item $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} \Rightarrow 
+        (a_{n})_{n \in \mathbb{N}} $ είναι \!\textcolor{Col1}{γνησίως φθίνουσα}  
+      \item $ \frac{a_{n+1}}{a_{n}} \geq 1, \; \forall n \in \mathbb{N} \Rightarrow 
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{αύξουσα} 
+      \item $ \frac{a_{n+1}}{a_{n}} \leq 1, \; \forall n \in \mathbb{N} \Rightarrow 
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{φθίνουσα}
+    \end{myitemize}
+    }{
+    Αν $ a_{n}<0, \; \forall n \in \mathbb{N} $, τότε:
+    \begin{myitemize}[leftmargin=*]
+      \item $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} \Rightarrow
+        (a_{n})_{n \in \mathbb{N}} $ είναι \!\textcolor{Col1}{γνησίως φθίνουσα}  
+      \item $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} \Rightarrow
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{γνησίως αύξουσα}  
+      \item $ \frac{a_{n+1}}{a_{n}} \geq 1, \; \forall n \in \mathbb{N} \Rightarrow 
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{φθίνουσα}  
+      \item $ \frac{a_{n+1}}{a_{n}} \leq 1, \; \forall n \in \mathbb{N} \Rightarrow 
+        (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{αύξουσα}  
+    \end{myitemize}
+  }
+\end{rem}
+
+\section{Μεθοδολογία εύρεσης μονοτονίας μιας ακολουθίας}
+\begin{myitemize}
+  \item Σχηματίζουμε τη διαφορά $ a_{n+1} - a_n $ και ελέγχουμε το πρόσημό της. 
+    Αν $ a_{n+1}-a_{n}>0, \; (<0), \; \forall n \in \mathbb{N} $ τότε 
+    $ (a_{n})_{n \in \mathbb{N}}$ γνησίως αύξουσα (γνησίως φθίνουσα). 
+    Αν για τουλάχιστον ένα $ n \in \mathbb{N} $, στις παραπάνω ανισότητες, 
+    έχω ισότητα, τότε  $ (a_{n})_{n \in \mathbb{N}} $ είναι αύξουσα (φθίνουσα).
+  \item Αν οι όροι της ακολουϑίας διατηρούν πρόσημο, $ \; \forall n \in \mathbb{N} $ 
+    τότε συγκρίνουμε το πηλίκο δυο διαδοχικών όρων της ακολουθίας με τη μονάδα, 
+    και βγάζουμε τα συμπεράσματά μας σύμφωνα με την παρατήρηση~\ref{dfn:isodmono}
+  \item Αν η ακολουθία δίνεται με μη-αναδρομικό τύπο, και είναι (αρκετά) σύνθετη, 
+    τότε μετατρέπω την ακολουθία στην αντίστοιχη συνάρτηση και μελετάμε τη 
+    μονοτονία της αντίστοιχης συνάρτησης, συνήθως με τη βοήθεια της παραγώγου.
+  \item Αν η $ (a_{n})_{n \in \mathbb{N}} $ δίνεται με αναδρομικό τύπο 
+    $ (a_{n+1}= f(a_{n}), \; \forall n \in \mathbb{N}) $ τότε συνήθως η απόδειξή 
+    της γίνεται με Μαθηματική Επαγωγή.
+\end{myitemize}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η $ a_{n} = 2n-1, \; \forall n \in \mathbb{N} $ είναι γνησίως 
+      αύξουσα. Πράγματι,
+
+      \twocolumnsides{%
+        \begin{description}
+          \item[Α᾽ τρόπος: (κατασκευαστικός)]
+            \begin{align*}
+              n+1 &\geq n, \; \forall n \in \mathbb{N} \\
+              2(n+1) &\geq 2n, \; \forall n \in \mathbb{N} \\
+              2(n+1) -1 &\geq 2n-1, \; \forall n \in 
+              \mathbb{N} \\
+              a_{n+1} &\geq a_{n}, \; \forall n \in \mathbb{N}
+            \end{align*}
+        \end{description}
+        }{%
+        \begin{description}
+          \item[Β᾽ τρόπος: (με το πρόσημο της διαφοράς)] 
+            \begin{align*}
+              a_{n+1}-a_{n} &= 2(n+1)-1 - (2n-1) \\
+                            &= 2 >0, \; \forall n \in 
+                            \mathbb{N} 
+            \end{align*}
+        \end{description}
+      }
+
+    \item Η $ a_{n} = \frac{(n-1)!}{n^{n}}, \; \forall n \in 
+      \mathbb{N} $ 
+      είναι γνησίως φθίνουσα. Πράγματι, επειδή όλοι οι όροι της ακολουθίας 
+      είναι \textbf{θετικοί}, επομένως διατηρεί πρόσημο, έχουμε:
+      \[
+        \frac{a_{n+1}}{a_n} =
+        \frac{\frac{(n+1-1)!}{(n+1)^{n+1}}}{\frac{(n-1)!}{n^{n}}} 
+        = \frac{n^{n}}{(n+1)^{n+1}}\cdot \frac{n!}{(n-1)!} 
+        = \frac{n^{n}}{(n+1)^{n+1}}\cdot \frac{1\cdot 2\cdots (n-1)\cdot n}{1 \cdot 2
+        \cdot (n-1)}  
+        = \left(\frac{n}{n+1} \right)^{n+1} < 1, \; \forall n \in \mathbb{N} 
+      \] 
+
+    \item Η $ a_{n}= \frac{4^{n}}{n^{2}}, \; \forall n \in \mathbb{N} $ 
+      είναι αύξουσα. Πράγματι, επειδή όλοι οι όροι της ακολουθίας 
+      είναι \textbf{θετικοί}, επομένως διατηρεί πρόσημο, έχουμε:
+      \[
+        \frac{a_{n+1}}{a_{n}} 
+        = \frac{\frac{4^{n+1}}{(n+1)^{2}}}{\frac{4^{n}}{n^{2}}} 
+        = \frac{4^{n+1}}{4^{n}}\cdot \frac{n^{2}}{(n+1)^{2}}  
+        = \frac{4\cdot \cancel{4^{n}}}{\cancel{4^{n}}} \cdot \frac{n^{2}}{(n+1)^{2}}
+        = \left( \frac{2n}{n+1} \right)^{2} \geq 1, 
+        \; \forall n \in \mathbb{N} 
+      \]
+      Πράγματι, η ακολουθία δεν είναι γνησίως αύξουσα, γιατί $ a_{1}= a_{2}=4$.
+
+    \item Η $ a_{n+1}=2 - \frac{1}{a_{n}}, \; \forall n \in \mathbb{N}
+      $ με $ a_{1} = 2 $ είναι γνησίως φθίνουσα. Πράγματι, επειδή η ακολουθία είναι 
+      \textbf{αναδρομική}, με μαθηματική επαγωγή, έχουμε:
+      \begin{myitemize}[labelindent=1em]
+        \item Για $ n=1 $, έχω: $ a_{1}= 2 >
+          \frac{3}{2} = 2 - \frac{1}{2} = a_{2}$, ισχύει.
+        \item Έστω ότι ισχύει για $n$, δηλ.
+          $\inlineequation[eq:epag]{a_{n+1}<a_{n}}$.
+        \item Θ.δ.ο.\ ισχύει για $ n+1 $. Πράγματι, από τη σχέση~\eqref{eq:epag} 
+          έχουμε:
+          \begin{align*}
+            a_{n+1} < a_{n} \Leftrightarrow \frac{1}{a_{n+1}} > \frac{1}{a_{n}}
+            \Leftrightarrow - \frac{1}{a_{n+1}} < - \frac{1}{a_{n}} \Leftrightarrow 2-
+            \frac{1}{a_{n+1}} < 2 - \frac{1}{a_{n}} \Leftrightarrow a_{(n+1)+1} 
+            < a_{n+1}
+          \end{align*} 
+      \end{myitemize}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = (-1)^{n} \frac{1}{n^{2}}, 
+      \; \forall n \in \mathbb{N} $ 
+      δεν είναι μονότονη.
+
+      \begin{proof}
+        Θα δείξουμε ότι η ακολουθία δεν διατηρεί πρόσημο. Πράγματι, 
+        $ \forall n \in \mathbb{N} $
+        \begin{align*}
+          a_{n+1}- a_{n} = \frac{(-1)^{n+1}}{(n+1)^{2}} - 
+          \frac{(-1)^{n}} {n^{2}} = \frac{(-1)^{n+1}}{(n+1)^{2}} + 
+          \frac{(-1)^{n+1}}{n^{2}} 
+          = (-1)^{n+1}\Biggl[\underbrace{\frac{1}{(n+1)^{2}} + 
+              \frac{1}{n^{2}}}_{b_{n} > 0, \; \forall n \in 
+          \mathbb{N}}\Biggr] 
+          = \begin{cases}
+            b_{n}, & n \; \text{περιττός} \\
+            -b_{n}, & n \; \text{άρτιος} 
+          \end{cases}
+        \end{align*} 
+      \end{proof}
+  \end{enumerate}
+\end{examples}
+
+% \begin{mybox3}
+% \begin{prop}
+% Η ακολουθία $ \left(1+ \frac{1}{n}\right)^{n} $ είναι γνησίως αύξουσα.
+% \end{prop}
+% \end{mybox3}
+% \begin{proof}
+% \item {}
+%   Έστω $ n_{0} \in \mathbb{N} $. Τότε 
+%   \begin{align*}
+%     \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}+1} > 
+%     \left(1+ \frac{1}{n_{0}} \right)^{n_{0}} 
+%         &\Leftrightarrow \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}} 
+%         \cdot \left(1 + \frac{1}{n_{0} +1} \right) > \left(1+ \frac{1}{n_{0}+1} 
+%         \right) \\
+%         & \Leftrightarrow \frac{(n_{0}+2)^{n_{0}}}{(n_{0}+1)^{n_{0}}} \cdot 
+%         \frac{n_{0}+2}{n_{0}+1} > \frac{(n_{0}+1)^{n_{0}}}{n_{0}^{n_{0}}} \\
+%         & \Leftrightarrow \frac{n_{0}^{n_{0}}(n_{0}+2)^{n_{0}}}{(n_{0}+1)^{2n0}} > 
+%         \frac{n_{0}+1}{n_{0}+2} \\
+%         & \Leftrightarrow \left(\frac{n_{0}(n_{0}+2)}{(n_{0}+1)^{2}}\right)^{n_{0}} > 
+%         \frac{n_{0}+2-2+1}{n_{0}+2} \\
+%         & \Leftrightarrow \left(\frac{n_{0}^{2}+2 n_{0}+1-1}{(n_{0}+1)^{2}}\right)
+%         ^{n_{0}} > 1-\frac{1}{n_{0}+2} \\
+%         & \Leftrightarrow \left(\frac{(n_{0}+1)^{2}-1}{(n_{0}+1)^{2}} \right)^{n_{0}}
+%         > 1 - \frac{1}{n_{0}+2} \\
+%         & \Leftrightarrow \left(1 - \frac{1}{(n_{0}+1)^{2}} \right)^{n_{0} } > 1 - 
+%         \frac{1}{n_{0}+2} \\
+%   \end{align*} 
+%   Άρα αρκεί να δείξουμε αυτή την ανισότητα. Πράγματι,
+%   για $ a = - \frac{1}{(n_{0}+1)^{2}} > -1 $ από ανισότητα Bernoulli: 
+%   \begin{align*}
+%     \left(1- \frac{1}{(n_{0}+1)^{2}}\right)^{n_{0}} > 1 - n_{0}\cdot 
+%     \frac{1}{(n_{0}+1)^{2}} > 1 - \frac{1}{n_{0}+2} 
+%   \end{align*}
+%   όπου χρησιμοποιήσαμε το γεγονός ότι $ \frac{n_{0}}{(n_{0}+1)^{2}} < 
+%   \frac{1}{n_{0}+2}  $, το οποίο ισχύει, γιατί 
+%   \[
+%     \frac{n_{0}}{(n_{0}+1)^{2}} < \frac{1}{n_{0}+2} 
+%     \Leftrightarrow n_{0}(n_{0}+2) < (n_{0}+1)^{2} 
+%     \Leftrightarrow n_{0}^{2}+2 n_{0} < n_{0}^{2} + 2 n_{0}+1 
+%     \Leftrightarrow 0 < 1
+%   \]
+% \end{proof}
+
+\begin{prop}
+  Η ακολουθία $ a_{n} = \left(1+ \frac{1}{n} \right)^{n}, \; \forall n \in \mathbb{N} $ 
+  είναι γνησίως αύξουσα.
+\end{prop}
+\begin{proof}
+  Έχουμε ότι $ a_{n} > 0, \; \forall n \in \mathbb{N} $.  
+  \begin{align*}
+    \frac{a_{n+1}}{a_{n}} &= \frac{\left(1+ \frac{1}{n+1} \right)^{n+1}}{\left(1+ \frac{1}{n}\right)^{n}} 
+    = \left(1+ \frac{1}{n}\right)\left(\frac{1+ \frac{1}{n+1}}{1+
+    \frac{1}{n}}\right)^{n+1} 
+    = \left(1+ \frac{1}{n}\right) \left(\frac{n(n+2)}{(n+1)^{2}}\right)^{n+1} \\
+                          &= \left(1+
+                          \frac{1}{n}\right)\left(\frac{n^{2}+2n\color{Col1}{+1-1}}{(n+1)^{2}}\right)^{n+1}
+                          = \left(1+ \frac{1}{n} \right) \left(1- \frac{1}{(n+1)^{2}}
+                          \right)^{n+1 } \\
+                          & \smash{\overset{\text{Bern.}}{>}} \left(1+ \frac{1}{n}\right) \left(1-(n+1)
+                          \frac{1}{(n+1)^{2}}\right) = \left(1+ \frac{1}{n}\right) 
+                          \left(1- \frac{1}{n+1}\right) = \frac{n+1}{n} \cdot
+                          \frac{n}{n+1} = 1, \; \forall n \in \mathbb{N}
+  \end{align*}
+\end{proof}
+
+
+
+\end{document}

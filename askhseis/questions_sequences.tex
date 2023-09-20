@@ -1,0 +1,124 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz}
+
+\pagestyle{askhseis}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col2}{Ακολουθίες (Ερωτήσεις)}}
+\end{center}
+
+% \section*{Ακολουθίες}
+
+\vspace{\baselineskip}
+
+\hfill \textcolor{Col1}{\textbf{Σωστό}} \quad \textcolor{Col1}{\textbf{Λάθος}}
+\begin{enumerate}[itemsep=.5\baselineskip]
+  \item \textcolor{Col1}{Αν μια ακολουθία είναι φραγμένη, τότε συγκλίνει}. 
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: η $ a_{n}=(-1)^{n} $ είναι φραγμένη, όμως δεν συγκλίνει. 
+
+  \item \textcolor{Col1}{Αν μια ακολουθία δεν είναι φραγμένη, τότε δεν συγκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: είναι το αντιθετοαντίστροφο του θεώρηματος: Αν μια ακολουθία συγκλίνει τότε 
+    είναι φραγμένη. 
+
+  \item \textcolor{Col1}{Αν μια υπακολουθία μιας ακολουθίας δεν συγκλίνει, τότε η
+    ακολουθία δεν συγκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Θεώρημα: αν μια ακολουθία συγκλίνει τότε κάθε υπακολουθία της συγκλίνει 
+    στο ίδιο όριο. 
+
+  \item \textcolor{Col1}{Η ακολουθία $ a_{n}= \frac{(-1)^{n}}{n+1} $ έχει συγκλίνουσα
+    υπακολουθία}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Θεώρημα:(Bolzano-Weirstrass) Κάθε φραγμένη ακολουθία έχει συγκλίνουσα 
+    υπακολουθία. 
+
+  \item \textcolor{Col1}{Αν μια ακολουθία συγκλίνει, τότε είναι φραγμένη}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Είναι θεώρημα. 
+
+  \item \textcolor{Col1}{Αν δυο υπακολουθίες μιας ακολουθίας συγκλίνουν στο ίδιο όριο,
+    τότε η ακολουθία συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: $ (-1)^{2n}, \; (-1)^{4n} $, έχουν το ίδιο όριο, το 1, όμως η $ (-1)^{n}
+    $ δεν συγκλίνει. 
+
+  \item \textcolor{Col1}{Αν μια ακολουθία συγκλίνει, τότε και κάθε υπακολουθία της
+    συγκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Θεώρημα: αν μια ακολουθία συγκλίνει τότε κάθε υπακολουθία της συγκλίνει 
+    στο ίδιο όριο. 
+
+  \item \textcolor{Col1}{Αν μια ακολουθία δεν είναι μονότονη, αλλά είναι φραγμένη, τότε
+    δεν συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: Μπορεί να συγκλίνει (π.χ. $ \lim_{n \to \infty} \frac{(-1)^{n}}{n} $) ή 
+    να μη συγκλίνει (π.χ. $ \lim_{n \to \infty} (-1)^{n} $)
+
+  \item \textcolor{Col1}{Αν μια ακολουθία είναι μονότονη και φραγμένη, τότε συκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Είναι θεώρημα: Στο sup αν είναι αύξουσα και στο inf αν είναι φθίνουσα.
+
+  \item \textcolor{Col1}{Αν $ (a_{n}), (b_{n}) $ είναι συγκλίνουσες, τότε η 
+      $(a_{n}+b_{n})$ είναι επίσης συγκλίνουσα}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+    Απ: Είναι ιδιότητα των ορίων. Μάλιστα $ \lim_{n \to \infty} (a_{n}+b_{n}) =a+b $
+
+  \item \textcolor{Col1}{Αν $ (a_{n}) $ αποκλίνει και $ (b_{n}) $ συγκλίνει, τότε η $
+    (a_{n}+b_{n}) $ αποκλίνει}.
+    \hfill $\textcolor{Col1}{\blacksquare} \qquad \qquad \textcolor{Col1}{\square}$
+
+  \item \textcolor{Col1}{Αν $ (a_{n}), (b_{n}) $ είναι αποκλίνουσες, τότε η
+    $(a_{n}+b_{n})$ αποκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: Μπορεί να συγκλίνει π.χ. $ a_{n}= n $ και $ b_{n}=-n $ αποκλίνουν, 
+    όμως $ (a_{n}+b_{n})=0 $ (σταθ.) άρα συγκλίνει.
+
+  \item \textcolor{Col1}{Αν $ (a_{n}+b_{n}) $ συγκλίνει, τότε $ (a_{n}) 
+    $ συγκλίνει και $ (b_{n}) $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: π.χ. $ a_{n}= n $ και $ b_{n}=-n $ αποκλίνουν, όμως $ (a_{n}+b_{n})=0 $ 
+    (σταθ.) άρα συγκλίνει.
+
+  \item \textcolor{Col1}{Αν $ (a_{n}\cdot b_{n}) $ συγκλίνει, τότε $ (a_{n}) $ 
+      συγκλίνει ή $ (b_{n}) $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: π.χ. $ a_{n}=b_{n}=(-1)^{n} $ αποκλίνουν, όμως $ (a_{n}\cdot
+    b_{n})=1 $ (σταθ.) άρα συγκλίνει. 
+
+  \item \textcolor{Col1}{Αν $ \lim_{n \to \infty} \abs{a_{n}} = \abs{a} $ και 
+      $ a \neq 0 $, τότε $ \lim_{n \to \infty} a_{n} = a $}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: π.χ. $ \lim_{n \to \infty} \abs{(-1)^{n}} = 1 \neq 0 $, όμως 
+    $ \lim_{n \to \infty} (-1)^{n} $ δεν υπάρχει.
+
+  \item \textcolor{Col1}{Αν $ \left(\frac{a_{n}}{b_{n}}\right) $ συγκλίνει, τότε 
+      $ (a_{n}) $ συγκλίνει και $ (b_{n}) $ συγκλίνει}.
+    \hfill $\textcolor{Col1}{\square} \qquad \qquad \textcolor{Col1}{\blacksquare}$
+
+    Απ: π.χ. $ a_{n}=b_{n}=(-1)^{n} $ αποκλίνουν, όμως $ \lim_{n
+    \to \infty} (\frac{a_{n}}{b_{n}})=1 $ (σταθ.) άρα συγκλίνει. 
+\end{enumerate}
+
+
+
+\end{document}

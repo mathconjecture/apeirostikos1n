@@ -1,0 +1,160 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item sup και inf 
+
+\begin{enumerate}
+  \item {\boldmath\textcolor{Col2}{$A = (0,2) $}}
+    \begin{proof}(Με Ορισμό)
+    \item {}
+      Έχουμε ότι $ \sup A = 2 $ και $ \inf A = 0 $.
+      \begin{myitemize}
+        \item Θα δείξουμε ότι $ \sup A = 2 $. Πράγματι:
+          $2$ α.φ. του $A$, γιατί $ a < 2, \; \forall a \in A $.
+          Έστω $M$ α.φ. του $A$, δηλ. $a \leq M, \; \forall a \in A $.
+          Θ.δ.ο. $ 2 \leq M $ (Με άτοπο). Πράγματι:
+          Έστω $ M < 2 $. Τότε $ (M,2) \neq \emptyset \Rightarrow (M,2) \cap A \neq
+          \emptyset $, άρα 
+          $ \exists a \in (M,2) $.
+          Δηλαδή $ \exists a \in A $ με $ a > M $. 
+          άτοπο, γιατί $ M $ α.φ. του $A$.
+        \item Θα δείξουμε ότι $ \inf A = 0 $. Πράγματι:
+          $0$ κ.φ. του $A$, γιατί $ a > 0, \; \forall a \in A $.
+          Έστω $m$ κ.φ. του $A$, δηλ. $a \geq m, \; \forall a \in A $.
+          Θ.δ.ο. $ 0 \geq m $ (Με άτοπο). Πράγματι:
+          Έστω $ m > 0 $. Τότε $ (0,m) \neq \emptyset \Rightarrow (0,M) \cap A \neq
+          \emptyset $, άρα 
+          $ \exists a \in (0,m) $. 
+          Δηλαδή $ \exists a \in A $ με $ a < m $, 
+          άτοπο, γιατί $ m $ κ.φ. του $A$.
+      \end{myitemize}
+    \end{proof}
+  \item {\boldmath\textcolor{Col2}{$ A = \{ x \in \mathbb{R} \; 
+    : \; x < 0 \} $}}. 
+    \begin{proof}(Με Ορισμό)
+    \item {}
+      Έχουμε ότι $ \sup A = 0 $ και $ \inf A = - \infty $.
+      \begin{myitemize}
+        \item Θα δείξουμε ότι $ \sup A = 0 $. Πράγματι:
+          $ 0 $ α.φ. του $A$, γιατί $ a < 0, \; \forall a \in A $.
+          Έστω $M$ α.φ. του $A$, δηλ. $a \leq M, \; \forall a \in A $.
+          Θ.δ.ο. $ 0 \leq M $ (Με άτοπο). Πράγματι:
+          Έστω $ M < 0 $. Τότε $ (M,0) \neq \emptyset $, άρα 
+          $ \exists a \in (M,0) $.
+          Δηλαδή $ \exists a \in A $ με $ a > M $, 
+          άτοπο, γιατί $ M $ α.φ. του $A$.
+        \item Θα δείξουμε ότι $ \inf A = -\infty $. Πράγματι:
+          $ A \neq \emptyset $ και $A$ όχι κάτω φραγμένο. Άρα γράφουμε
+          $ \inf A = - \infty $.
+      \end{myitemize}
+    \end{proof}
+
+  \item {\boldmath \textcolor{Col2}{$ A = \left\{ \frac{1}{n} \; 
+    : \; n \in \mathbb{N} \right\} $}}.
+    \begin{proof}
+    \item {}
+      Έχουμε ότι $ \sup A = 1 $ και $ \inf A = 0 $.
+      \begin{myitemize}
+        \item Θα δείξουμε ότι $ \sup A = 1 $. Πράγματι:
+          $ \frac{1}{n} \leq 1, \; \forall n \in \mathbb{N} $, άρα το 1 είναι 
+          α.φ. του $A$ και επίσης $ 1 \in A $ (για $ n=1 $). 
+          Άρα $ 1 = \max A $. Άρα $ \sup A = \max A = 1 $.
+        \item Θα δείξουμε ότι $ \inf A = 0 $. Πράγματι:
+          Προφανώς $ 0 \leq \frac{1}{n}, \; \forall n \in \mathbb{N} $, 
+          άρα το $ 0 $ κ.φ. του $A$.
+          Έστω $ \varepsilon > 0 $. Τότε $ \exists n_{0} \in \mathbb{N} $
+          με $ \frac{1}{n_{0}} < \varepsilon $ τ.ω. $ \frac{1}{n_{0}} 
+          < 0 + \varepsilon$, με $ \frac{1}{n_{0}} \in A $.
+      \end{myitemize}
+    \end{proof}
+  \item {\boldmath \textcolor{Col2}{$ A = \left\{ \frac{n}{n+1} \; 
+    : \; n \in \mathbb{N} \right\} $ }}
+    \begin{proof}
+    \item {}
+      Έχουμε ότι $ \sup A = 1 $ και $ \inf A = \frac{1}{2} $
+      \begin{myitemize}
+        \item Θα δείξουμε οτι $ \sup A = 1 $. Πράγματι:
+          $ 1 $ α.φ. του $A$, γιατί $ \frac{n}{n+1} < 1, \; \forall n \in 
+          \mathbb{N}$.
+          (Δοκιμή: $ 1- \varepsilon < \frac{n}{n+1} \Leftrightarrow 
+          \varepsilon > 1 - \frac{n}{n+1} \Leftrightarrow \frac{1}{n+1} 
+          < \varepsilon \Leftrightarrow n+1 > \frac{1}{\varepsilon} 
+          \Leftrightarrow n > \frac{1}{\varepsilon} -1$ )
+          Έστω $ \varepsilon > 0 $. Τότε $ \exists n_{0} \in \mathbb{N}  $ με 
+          $ n_{0} > \frac{1}{\varepsilon} - 1 $ τ.ω. $ 1 - \varepsilon < 
+          \frac{n_{0}}{n_{0}+1}$, με $ \frac{n_{0}}{n_{0} +1} \in A $.
+        \item Θα δείξουμε ότι $ \inf A = \frac{1}{2} $. Πράγματι: $ \frac{1}{2}
+          $ κ.φ. του $A$, γιατί 
+          $ \frac{n}{n+1} \geq \frac{1}{2} \Leftrightarrow n+1 \leq 2n \Leftrightarrow
+          n \geq 1, \; \forall n \in \mathbb{N} $ (ισχύει)
+          και $ \frac{1}{2} \in A$ (για $ n = 1 $).
+          Άρα $ \frac{1}{2} = \min A $. Άρα $ \inf A = \min A = \frac{1}{2} $.
+      \end{myitemize}
+    \end{proof}
+  \item {\boldmath \textcolor{Col2}{$ A = \left\{ \frac{1}{n} + (-1)^{n} \; 
+    : \; n \in \mathbb{N} \right\} $}}.
+    \begin{proof}
+    \item {}
+      Παρατηρούμε ότι \begin{align*} 
+        A &= \left\{ 0, \frac{1}{2} + 1, \frac{1}{3} -1, 
+        \frac{1}{4} + 1, \frac{1}{5} -1, \ldots  \right\} \\ 
+          &= \left\{ 0, \frac{1}{3} -1, \frac{1}{5} -1, \ldots \right\} \cup 
+          \left\{ \frac{1}{2} + 1, \frac{1}{4} + 1, \ldots \right\} \\ 
+          &= \left\{ \frac{1}{2n-1} - 1 \; : \; n \in \mathbb{N}\right\}
+          \cup \left\{ \frac{1}{2n} + 1 \; : \; n \in \mathbb{N}\right\} \\
+          &= A_{1} \cup A_{2} 
+        \end{align*}
+        Αν παραστήσουμε τα στοιχεία του 
+        $A=\{ 0, \frac{3}{2}, -\frac{2}{3}, \frac{5}{4}, -\frac{4}{5}, \ldots \}$, 
+        πάνω στην ευθεία των πραγματικών αριθμών, παρατηρούμε ότι 
+        $ \inf A = \inf A_{1} = -1 $ και $ \sup A = \sup A_{2} = \max A_{2} = 
+        1+ \frac{1}{2} = \frac{3}{2} $. Πράγματι, από γνωστή πρόταση έχουμε ότι
+        $ \sup A = \max \{ \sup A_{1}, \sup A_{2}\} = 
+        \max \{0,\frac{3}{2}\} = \frac{3}{2}  $ και 
+        $ \inf A = \min \{ \inf A_{1}, \inf A_{2} \} = \min \{ -1, 1 \} = -1 $ 
+        Οπότε αρκεί να αποδείξουμε τα sup και inf των $A_{1}, A_{2} $. 
+        \begin{myitemize}
+          \item Θα δείξουμε ότι $ \sup A_{2} = \frac{3}{2} $. Πράγματι:
+            $ \frac{3}{2} $ α.φ. του $A_{2} $, γιατί $ \frac{1}{2n}+1 \leq
+            \frac{3}{2} \Leftrightarrow \frac{1+2n}{2n} \leq \frac{3}{2}
+            \Leftrightarrow 2+4n \leq 6n \Leftrightarrow n \geq 1, 
+            \; \forall n \in \mathbb{N} $ (ισχύει) 
+            και $ \frac{3}{2} \in A_{2} $ (για $ n=1 $).
+            Άρα $ \frac{3}{2} = \max A_{2} $. Άρα $ \sup A_{2} = \max A_{2} 
+            = \frac{3}{2} $.
+          \item Θα δείξουμε ότι $ \inf A_{1} = -1 $. Πράγματι:
+            $ -1 $ κ.φ. του $A_{1}$, γιατί προφανώς $ \frac{1}{2n-1} - 1 \geq -1, 
+            \; \forall n \in \mathbb{N} $.
+            (Δοκιμή: $ \frac{1}{2 n -1} -1 < -1 + \varepsilon 
+            \Leftrightarrow \frac{1}{2 n -1} < \varepsilon \Leftrightarrow 
+            2n-1 > \frac{1}{\varepsilon} \Leftrightarrow n > \frac{1/ \varepsilon +
+            1}{2}). $
+            Έστω $ \varepsilon > 0 $. Τότε $ \exists n_{0} \in \mathbb{N}  $ 
+            με $ n_{0} > \frac{1/ \varepsilon +1}{2} $ τ.ω. $ \frac{1}{2 n_{0} -1} 
+            - 1 < \varepsilon -1 $, με $ \frac{1}{2 n_{0}-1} - 1 \in A $.
+        \end{myitemize}
+      \end{proof}
+    \item {\boldmath \textcolor{Col2} {$ A = \left\{ \frac{1}{n} - 
+      \frac{1}{m} \; : \; n,m \in \mathbb{N} \right\}$ }}
+      Έχουμε ότι $ \sup A = 1 $  και $\inf A = -1 $.
+      \begin{myitemize}
+        \item Θα δείξουμε ότι $ \inf A = -1 $. Πράγματι:
+          $ -1 $ κ.φ. του $A$, γιατί $ \frac{1}{n} - \frac{1}{m} \geq \frac{1}{n} 
+          - 1 > -1, \; \forall n \in \mathbb{N} $.
+          'Εστω $ \varepsilon > 0 $. Τότε, $ \exists n_{0} \in \mathbb{N} $ με 
+          $ \frac{1}{n_{0}} < \varepsilon $ ώστε
+          $ \frac{1}{n_{0}} - 1 < \varepsilon -1 $ με $ \frac{1}{n_{0}} -1 \in A $.
+        \item Θα δείξουμε ότι $ \sup A = 1 $. Πράγματι:
+          Παρατηρούμε ότι $ A = -A $, άρα από γνωστή πρόταση έχουμε ότι 
+          \[ \inf A = - \sup (-A) = - \sup A \]
+          Άρα \[ \sup A = - \inf A = -(-1) = 1 \]
+      \end{myitemize}
+  \end{enumerate}
+  \end{enumerate}
+
+\end{document}
